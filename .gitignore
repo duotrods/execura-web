@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code and claude-flow (local AI tooling, not for version control)
+.claude/
+.claude-flow/
+.mcp.json
