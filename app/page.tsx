@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Clock,
   Star,
+  Headphones,
 } from "lucide-react";
 import {
   HeroContent,
@@ -24,39 +25,56 @@ import {
 import AnimatedStat from "@/components/gsap/AnimatedStat";
 import ParallaxHero from "@/components/gsap/ParallaxHero";
 import { ClipReveal } from "@/components/gsap/ClipReveal";
-import { CardTilt } from "@/components/gsap/CardTilt";
 import { MagneticButton } from "@/components/gsap/MagneticButton";
 
 const services = [
   {
+    slug: "automation",
     icon: Zap,
     title: "Automations",
+    subtitle: "Streamline with Smart Automation",
     description:
       "Intelligent automation solutions that eliminate repetitive tasks and reduce errors. From workflow automation to AI-powered tools and integrations, we transform how your business operates.",
   },
   {
+    slug: "admin-support",
     icon: Settings,
     title: "Administrative Support",
+    subtitle: "Your Business, Running Smoothly",
     description:
-      "From document preparation and data entry to travel arrangements and meeting coordination, our administrative specialists ensure your business runs smoothly.",
+      "From document preparation and data entry to travel arrangements and meeting coordination, our administrative specialists ensure your business runs without friction.",
   },
   {
+    slug: "executive-assistance",
     icon: UserCog,
     title: "Executive Assistance",
+    subtitle: "High-Level Support for Leaders",
     description:
       "High-level support for executives and business leaders including strategic scheduling, project coordination, research, and stakeholder communication.",
   },
   {
+    slug: "operations",
     icon: Briefcase,
-    title: "Business Operations Support",
+    title: "Business Operations",
+    subtitle: "Operational Excellence, Delivered",
     description:
-      "Operational excellence through process optimization, vendor management, basic bookkeeping support, and operational workflow improvements.",
+      "Operational excellence through process optimisation, vendor management, bookkeeping support, and workflow improvements that keep your business moving.",
   },
   {
+    slug: "website",
     icon: Globe,
-    title: "Website Creation & Maintenance",
+    title: "Website Services",
+    subtitle: "Your Digital Presence, Perfected",
     description:
-      "Professional website design and development services that establish your online presence. From custom website creation to ongoing maintenance and updates.",
+      "Professional website design and development services that establish your online presence — from custom builds to ongoing maintenance and SEO optimisation.",
+  },
+  {
+    slug: "virtual-assistant",
+    icon: Headphones,
+    title: "Virtual Assistant",
+    subtitle: "Your Remote Right Hand",
+    description:
+      "A dedicated virtual assistant to handle your day-to-day tasks — inbox management, research, scheduling, and personal coordination — so you can focus on what matters.",
   },
 ];
 
@@ -227,153 +245,174 @@ export default function HomePage() {
               </Link>
             </FadeUp>
 
-            <StaggerChildren className="grid grid-cols-2 gap-4">
-              {[
-                { number: "01", text: "Discovery & Consultation" },
-                { number: "02", text: "Customized Solution" },
-                { number: "03", text: "Seamless Onboarding" },
-                { number: "04", text: "Consistent Delivery" },
-              ].map((item) => (
-                <StaggerItem key={item.number}>
-                  <div className="bg-white border border-brand-text/10 p-6 hover:border-brand-text/20 hover:shadow-sm transition-all duration-200 h-full">
-                    <div className="font-display text-2xl font-semibold text-brand-text/20 mb-2">
-                      {item.number}
-                    </div>
-                    <div className="text-sm font-medium text-brand-text">
-                      {item.text}
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerChildren>
+            <FadeUp delay={0.2}>
+              <div className="relative w-full aspect-4/5 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+                  alt="Execura team collaborating on business solutions"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-primary/10" />
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-primary py-24 lg:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ClipReveal className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-3">
-              What We Offer
-            </p>
-            <h2 className="font-display text-3xl lg:text-4xl font-medium text-brand-text leading-tight mb-4 uppercase tracking-widest">
-              Comprehensive Support Solutions for Modern Businesses
-            </h2>
-            <p className="text-brand-text/60 font-light">
-              A complete suite of business support services designed to
-              alleviate operational burdens and enhance your productivity.
-            </p>
-          </ClipReveal>
 
-          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Section header */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 pb-14 border-b border-white/10 mb-4">
+            <ClipReveal className="max-w-2xl">
+              <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-5">
+                What We Offer
+              </p>
+              <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-medium text-white leading-[1.05] uppercase tracking-widest">
+                Precision Support,<br className="hidden lg:block" /> Built Around You
+              </h2>
+            </ClipReveal>
+            <FadeUp delay={0.2} className="max-w-sm">
+              <p className="text-white/40 font-light leading-relaxed mb-6 text-sm">
+                Six distinct service areas. One seamless partnership. Everything your business needs to operate at its highest level.
+              </p>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-secondary hover:gap-4 font-medium text-sm transition-all duration-200 uppercase tracking-[3px]"
+              >
+                Explore All Services
+                <ArrowRight size={14} />
+              </Link>
+            </FadeUp>
+          </div>
+
+          {/* Service rows */}
+          <StaggerChildren>
             {services.map((service, idx) => (
-              <StaggerItem key={idx}>
-                <CardTilt className="relative bg-brand-bg border border-brand-text/10 p-7 hover:border-brand-text/20 hover:shadow-sm transition-all duration-200 h-full">
-                  <div className="w-11 h-11 bg-primary/10 flex items-center justify-center mb-5">
-                    <service.icon size={20} className="text-primary" />
+              <StaggerItem key={service.slug}>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group relative flex items-center gap-6 lg:gap-10 py-7 lg:py-9 border-b border-white/[0.07] hover:border-gold/30 hover:bg-gold/5 -mx-6 lg:-mx-8 px-6 lg:px-8 transition-all duration-300"
+                >
+                  {/* Ghost number */}
+                  <span className="font-display text-5xl lg:text-7xl font-semibold leading-none select-none w-14 lg:w-20 shrink-0 text-white/[0.05] group-hover:text-gold/20 transition-colors duration-500">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Icon box */}
+                  <div className="hidden sm:flex w-10 h-10 border border-white/10 group-hover:border-gold/50 items-center justify-center shrink-0 transition-colors duration-300">
+                    <service.icon size={16} className="text-white/30 group-hover:text-gold transition-colors duration-300" />
                   </div>
-                  <h3 className="text-brand-text font-semibold text-lg mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-brand-text/60 text-sm leading-relaxed font-light">
-                    {service.description}
-                  </p>
-                </CardTilt>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display text-lg lg:text-2xl font-medium text-white/70 group-hover:text-white transition-colors duration-300 uppercase tracking-widest mb-1">
+                      {service.title}
+                    </h3>
+                    <p className="text-white/30 text-sm font-light group-hover:text-white/50 transition-colors duration-300 truncate lg:whitespace-normal">
+                      {service.subtitle}
+                    </p>
+                  </div>
+
+                  {/* Explore label */}
+                  <div className="hidden lg:flex shrink-0 items-center gap-2 text-white/20 group-hover:text-gold group-hover:translate-x-1 transition-all duration-300">
+                    <span className="text-[10px] uppercase tracking-[4px] font-medium">Explore</span>
+                    <ArrowRight size={13} />
+                  </div>
+
+                  {/* Mobile arrow */}
+                  <ArrowRight size={16} className="lg:hidden shrink-0 text-white/20 group-hover:text-gold transition-colors duration-300" />
+                </Link>
               </StaggerItem>
             ))}
-            <StaggerItem>
-              <div className="bg-secondary p-7 flex flex-col justify-between h-full">
-                <div>
-                  <h3 className="text-white font-semibold text-lg mb-3">
-                    Need a Custom Solution?
-                  </h3>
-                  <p className="text-white/80 text-sm leading-relaxed font-light">
-                    Every business has unique needs. Let us design a tailored
-                    support solution specifically for you.
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 text-white font-medium text-sm hover:gap-3 transition-all duration-150 uppercase tracking-wider"
-                >
-                  Discuss Your Needs
-                  <ArrowRight size={15} />
-                </Link>
-              </div>
-            </StaggerItem>
           </StaggerChildren>
 
-          <FadeUp className="text-center mt-10" delay={0.1}>
+          {/* Bottom CTA */}
+          <FadeUp delay={0.15} className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-10 border-t border-white/10">
+            <p className="text-white/30 text-sm font-light">
+              Not sure which service fits? We&apos;ll help you figure it out.
+            </p>
             <Link
-              href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-brand-text/20 hover:border-brand-text text-brand-text font-medium uppercase tracking-wider transition-colors duration-150"
+              href="/contact"
+              className="inline-flex items-center gap-3 px-7 py-3.5 bg-secondary hover:bg-secondary/90 text-white text-sm font-medium uppercase tracking-[3px] transition-colors duration-200"
             >
-              View All Services
-              <ArrowRight size={15} />
+              Book a Free Consultation
+              <ArrowRight size={14} />
             </Link>
           </FadeUp>
+
         </div>
       </section>
 
       {/* How It Works */}
       <section id="how-it-works" className="bg-brand-bg py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ClipReveal className="text-center max-w-2xl mx-auto mb-14">
+          <ClipReveal className="text-center max-w-2xl mx-auto mb-16">
             <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-3">
               Our Process
             </p>
             <h2 className="font-display text-3xl lg:text-4xl font-medium text-brand-text leading-tight mb-4 uppercase tracking-widest">
-              Getting Started is Simple and Seamless
+              Simple. Proven. 4 Steps.
             </h2>
             <p className="text-brand-text/60 font-light">
-              Our proven 5-step process ensures you receive the right support,
-              delivered the right way, from day one.
+              Getting started is straightforward. Our 4-step process ensures you
+              receive the right support, delivered the right way, from day one.
             </p>
           </ClipReveal>
 
-          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              {
-                number: "01",
-                title: "Free Consultation",
-                desc: "We discuss your business needs, goals, and how our support can help.",
-              },
-              {
-                number: "02",
-                title: "Tailored Proposal",
-                desc: "A custom solution is designed specifically around your requirements.",
-              },
-              {
-                number: "03",
-                title: "Seamless Onboarding",
-                desc: "Our team integrates smoothly with your workflows within 2–4 weeks.",
-              },
-              {
-                number: "04",
-                title: "Consistent Support",
-                desc: "Dedicated professionals deliver high-quality support every day.",
-              },
-              {
-                number: "05",
-                title: "Continuous Growth",
-                desc: "We review, improve, and scale our service as your business evolves.",
-              },
-            ].map((step) => (
-              <StaggerItem key={step.number}>
-                <div className="bg-white border border-brand-text/10 p-6 hover:border-brand-text/20 hover:shadow-sm transition-all duration-200 h-full">
-                  <div className="font-display text-4xl font-semibold text-brand-text/10 mb-4">
-                    {step.number}
+          <StaggerChildren>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-14 lg:gap-0">
+              {[
+                {
+                  number: "01",
+                  title: "Free Consultation",
+                  desc: "We discuss your business needs, goals, and how our support can help.",
+                  icon: Clock,
+                },
+                {
+                  number: "02",
+                  title: "Tailored Proposal",
+                  desc: "A custom solution is designed specifically around your requirements.",
+                  icon: Settings,
+                },
+                {
+                  number: "03",
+                  title: "Seamless Onboarding",
+                  desc: "Our team integrates smoothly with your workflows within 2–4 weeks.",
+                  icon: UserCog,
+                },
+                {
+                  number: "04",
+                  title: "Consistent Support",
+                  desc: "Dedicated professionals deliver high-quality support every day.",
+                  icon: CheckCircle2,
+                },
+              ].map((step) => (
+                <StaggerItem key={step.number}>
+                  <div className="relative flex flex-col items-center text-center px-4 lg:px-6">
+                    {/* Circle icon */}
+                    <div className="relative w-20 h-20 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-5 z-10">
+                      <step.icon size={28} className="text-secondary" />
+                    </div>
+                    {/* Step label */}
+                    <p className="text-secondary/70 text-[10px] font-medium uppercase tracking-[4px] mb-1.5">
+                      Step {step.number}
+                    </p>
+                    {/* Title */}
+                    <h3 className="font-display text-base font-semibold text-brand-text mb-2 uppercase tracking-wide">
+                      {step.title}
+                    </h3>
+                    {/* Description */}
+                    <p className="text-brand-text/60 text-sm leading-relaxed font-light max-w-[180px] mx-auto">
+                      {step.desc}
+                    </p>
                   </div>
-                  <h3 className="text-brand-text font-semibold text-sm uppercase tracking-wide mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-brand-text/60 text-sm leading-relaxed font-light">
-                    {step.desc}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
+                </StaggerItem>
+              ))}
+            </div>
           </StaggerChildren>
 
           <FadeUp className="text-center mt-10" delay={0.1}>

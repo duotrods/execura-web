@@ -1,31 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, X, ChevronDown, Zap, Settings, UserCog, Briefcase, Globe } from "lucide-react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, Zap, Settings, UserCog, Briefcase, Globe, Headphones } from "lucide-react";
 
 const serviceItems = [
-  { href: "/services#automation", label: "Automations", icon: Zap },
-  { href: "/services#admin-support", label: "Administrative Support", icon: Settings },
-  { href: "/services#executive-assistance", label: "Executive Assistance", icon: UserCog },
-  { href: "/services#operations", label: "Business Operations", icon: Briefcase },
-  { href: "/services#website", label: "Website Services", icon: Globe },
+  { href: "/services/automation", label: "Automations", icon: Zap },
+  { href: "/services/admin-support", label: "Administrative Support", icon: Settings },
+  { href: "/services/executive-assistance", label: "Executive Assistance", icon: UserCog },
+  { href: "/services/operations", label: "Business Operations", icon: Briefcase },
+  { href: "/services/website", label: "Website Services", icon: Globe },
+  { href: "/services/virtual-assistant", label: "Virtual Assistant", icon: Headphones },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary border-b border-white/10">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-primary border-b border-white/10" : "bg-transparent border-b border-white/20"}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-secondary rounded flex items-center justify-center">
-              <span className="text-white font-bold text-sm">E</span>
-            </div>
+            <Image src="/assets/Icon.svg" alt="Execura" width={32} height={32} className="rounded" />
             <span className="text-white font-semibold text-lg tracking-tight">
               Execura
             </span>
@@ -52,13 +60,16 @@ export default function Navbar() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 px-3 py-2 text-sm text-white/70 hover:text-white transition-colors duration-150 uppercase tracking-wide">
+              <Link
+                href="/services"
+                className="flex items-center gap-1 px-3 py-2 text-sm text-white/70 hover:text-white transition-colors duration-150 uppercase tracking-wide"
+              >
                 Services
                 <ChevronDown
                   size={14}
                   className={`transition-transform duration-150 ${servicesOpen ? "rotate-180" : ""}`}
                 />
-              </button>
+              </Link>
 
               {servicesOpen && (
                 <div className="absolute top-full left-0 mt-0 w-64 bg-primary border border-white/10 shadow-xl">

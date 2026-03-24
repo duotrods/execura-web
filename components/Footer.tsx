@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
 
 const footerLinks = {
@@ -25,9 +26,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-secondary rounded flex items-center justify-center">
-                <span className="text-white font-bold text-sm">E</span>
-              </div>
+              <Image src="/assets/Icon.svg" alt="Execura" width={32} height={32} className="rounded" />
               <span className="text-white font-semibold text-lg tracking-tight">
                 Execura
               </span>

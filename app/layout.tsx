@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     "Expert business support solutions including virtual assistance, administrative services, website creation & maintenance, and operational support. Streamline your business operations with Execura's professional team.",
   keywords:
     "business support services, virtual assistant, administrative support, executive assistance, website design, website maintenance, business operations, professional support solutions",
+  icons: {
+    icon: "/assets/Icon.svg",
+    shortcut: "/assets/Icon.svg",
+    apple: "/assets/Icon.svg",
+  },
 };
 
 export default function RootLayout({
