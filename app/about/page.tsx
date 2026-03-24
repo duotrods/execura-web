@@ -1,14 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Star, Shield, Clock, Zap, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  Star,
+  Shield,
+  Clock,
+  Zap,
+  TrendingUp,
+  Users,
+  Settings,
+  UserCog,
+  CheckCircle2,
+  Heart,
+} from "lucide-react";
 import { ClipReveal } from "@/components/gsap/ClipReveal";
-import { CardTilt } from "@/components/gsap/CardTilt";
+import {
+  FadeUp,
+  StaggerChildren,
+  StaggerItem,
+  RevealLine,
+} from "@/components/Motion";
 
 export const metadata: Metadata = {
-  title: "About Execura Support Solutions - Our Mission, Vision & Team",
+  title: "About Execura Support Solutions — Our Mission, Vision & Team",
   description:
     "Learn about Execura Support Solutions' commitment to business excellence. Discover our mission, values, and the experienced team dedicated to your success.",
+  keywords:
+    "about execura, business support team, virtual assistant company, professional support solutions, executive assistance team, business operations support",
 };
 
 const values = [
@@ -16,335 +35,379 @@ const values = [
     icon: Star,
     title: "Excellence",
     description:
-      "We maintain the highest standards in everything we do, from communication to task execution. Quality is never compromised.",
+      "We maintain the highest standards in everything we do — from communication to execution. Quality is never an afterthought; it is our baseline.",
   },
   {
     icon: Shield,
     title: "Integrity",
     description:
-      "Trust is the foundation of our client relationships. We operate with complete transparency, honesty, and ethical practices.",
+      "Trust is the foundation of every client relationship we build. We operate with complete transparency, honesty, and unwavering ethical principles.",
   },
   {
     icon: Clock,
     title: "Reliability",
     description:
-      "Our clients depend on us, and we deliver consistently. Deadlines are met, commitments are honored, and support is always available.",
+      "Our clients depend on us, and we deliver — consistently. Deadlines are met, commitments are honored, and support is always available when it matters.",
   },
   {
     icon: Zap,
     title: "Adaptability",
     description:
-      "Every business is unique. We customize our approach to fit your specific needs, workflows, and objectives.",
+      "Every business is unique. We tailor our approach to fit your specific workflows, culture, and objectives — never a one-size-fits-all solution.",
   },
   {
     icon: TrendingUp,
-    title: "Continuous Improvement",
+    title: "Continuous Growth",
     description:
-      "We invest in our team's development and stay current with industry best practices, ensuring you always receive cutting-edge support.",
+      "We invest in our team's development and stay ahead of industry best practices, so our clients always benefit from cutting-edge support capabilities.",
+  },
+  {
+    icon: Heart,
+    title: "Client-Centricity",
+    description:
+      "You are at the centre of every decision we make. We listen deeply, act thoughtfully, and measure our success by the impact we create for you.",
   },
 ];
 
-const process = [
+const team = [
+  {
+    name: "Ley Jazzie Alicaway",
+    role: "CEO & Founder",
+    bio: "With over a decade of experience in executive operations and business strategy, Alexandra founded Execura with a vision to give every business access to world-class support — without the overhead of full-time hires.",
+    image:
+      "/assets/ley jazzie.jpeg",
+    initials: "LA",
+  },
+  {
+    name: "Rod Olinor Du-ot",
+    role: "Co-Founder & COO",
+    bio: "Daniel brings deep expertise in operations, process design, and automation. He leads Execura's service delivery and ensures every client engagement is backed by rigorous systems and a high-performing team.",
+    image:
+      "/assets/RR.JPG",
+    initials: "RD",
+  },
+];
+
+const processSteps = [
   {
     number: "01",
-    title: "Discovery & Consultation",
-    description:
-      "We begin by understanding your business, challenges, objectives, and specific support needs through detailed consultation.",
+    title: "Free Consultation",
+    desc: "We discuss your business needs, goals, and how our support can help.",
+    icon: Clock,
   },
   {
     number: "02",
-    title: "Customized Solution Design",
-    description:
-      "Based on your requirements, we develop a tailored support plan that addresses your unique needs and integrates with your existing operations.",
+    title: "Tailored Proposal",
+    desc: "A custom solution is designed specifically around your requirements.",
+    icon: Settings,
   },
   {
     number: "03",
     title: "Seamless Onboarding",
-    description:
-      "Our structured onboarding process ensures smooth integration with minimal disruption to your workflow.",
+    desc: "Our team integrates smoothly with your workflows within 2–4 weeks.",
+    icon: UserCog,
   },
   {
     number: "04",
-    title: "Consistent Delivery",
-    description:
-      "Your dedicated support team executes tasks with excellence, maintaining open communication and adhering to your standards.",
-  },
-  {
-    number: "05",
-    title: "Ongoing Optimization",
-    description:
-      "We regularly review our performance and processes, making continuous improvements to enhance efficiency and value delivery.",
+    title: "Consistent Support",
+    desc: "Dedicated professionals deliver high-quality support every day.",
+    icon: CheckCircle2,
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-primary pt-32 pb-24 lg:pt-40 lg:pb-32">
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="bg-primary pt-32 pb-20 lg:pt-40 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-4">
               About Us
             </p>
-            <h1 className="font-display text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
+            <h1 className="font-display text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-widest mb-5 uppercase">
               Empowering Businesses Through Exceptional Support
             </h1>
-            <p className="text-white/70 text-lg leading-relaxed font-light">
-              Built on expertise, driven by excellence, committed to your
-              success.
+            <p className="text-white/60 text-lg leading-relaxed font-light">
+              Built on expertise, driven by excellence, and committed to your success — every step of the way.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="bg-white py-20 lg:py-28">
+      {/* ── Our Story ─────────────────────────────────────────────────── */}
+      <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+            {/* Text */}
             <div>
               <ClipReveal>
-                <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-3">
+                <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-4">
                   Our Story
                 </p>
-                <h2 className="font-display text-3xl lg:text-4xl font-medium text-brand-text leading-tight mb-6 uppercase tracking-widest">
+                <h2 className="font-display text-4xl lg:text-5xl font-medium text-brand-text leading-tight mb-6 uppercase tracking-widest">
                   Who We Are
                 </h2>
               </ClipReveal>
-              <div className="space-y-4 text-brand-text/70 leading-relaxed font-light">
+              <RevealLine className="w-12 h-px bg-secondary mb-8" delay={0.2} />
+              <div className="space-y-5 text-brand-text/65 leading-[1.85] font-light">
                 <p>
-                  Execura Support Solutions was founded with a simple yet
-                  powerful vision: to help businesses thrive by providing
-                  world-class support services that remove operational barriers
-                  and unlock growth potential.
+                  Execura Support Solutions was founded with a clear and powerful vision: to help businesses thrive by removing operational barriers and unlocking their true growth potential.
                 </p>
                 <p>
-                  We recognized that many businesses struggle with
-                  administrative overload, operational inefficiencies, and the
-                  challenge of maintaining focus on core business activities.
-                  Talented entrepreneurs and executives were spending valuable
-                  time on tasks that, while necessary, didn&apos;t leverage
-                  their unique expertise and vision.
+                  We saw talented entrepreneurs and executives spending valuable hours on tasks that — while necessary — didn&apos;t leverage their unique skills or vision. Administrative overload, operational inefficiencies, and fragmented workflows were quietly costing businesses the focus they needed to grow.
                 </p>
                 <p>
-                  From this insight, Execura was born. We&apos;ve built a team
-                  of dedicated professionals who excel at the critical support
-                  functions that keep businesses running smoothly.
+                  From that insight, Execura was born. We built a team of dedicated specialists who excel at the critical support functions that keep modern businesses running — and growing — smoothly.
                 </p>
                 <p>
-                  Today, we proudly serve businesses across multiple industries,
-                  from innovative startups to established enterprises, helping
-                  them achieve operational excellence and sustainable growth.
+                  Today, we proudly serve businesses across multiple industries: from ambitious startups to established enterprises, all benefiting from Execura&apos;s commitment to operational excellence and exceptional service.
                 </p>
               </div>
             </div>
-            <div>
-              <div className="relative h-56 mb-5">
-                <Image
-                  src="/assets/about-story.svg"
-                  alt="About Execura"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="bg-brand-bg border border-brand-text/10 p-8">
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-brand-text font-semibold text-lg mb-3">
-                    Our Mission
-                  </h3>
-                  <p className="text-brand-text/70 text-sm leading-relaxed font-light">
-                    To deliver professional business support solutions that
-                    empower organizations to operate more efficiently, grow
-                    strategically, and achieve their full potential.
-                  </p>
-                </div>
-                <div className="border-t border-brand-text/10 pt-8">
-                  <h3 className="text-brand-text font-semibold text-lg mb-3">
-                    Our Vision
-                  </h3>
-                  <p className="text-brand-text/70 text-sm leading-relaxed font-light">
-                    To be the most trusted partner for businesses seeking
-                    operational excellence through expert support services—where
-                    every business has access to professional support that drives
-                    success.
-                  </p>
-                </div>
-              </div>
-              </div>
+
+            {/* Image */}
+            <div className="relative w-full overflow-hidden">
+              <Image
+                src="/assets/aboutus.JPG"
+                alt="The Execura team at work"
+                width={0}
+                height={0}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="w-full h-auto"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Mission & Vision ──────────────────────────────────────────── */}
+      <section className="bg-brand-bg py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 gap-0 border border-brand-text/10 bg-white">
+            <div className="p-8 lg:p-10 border-b sm:border-b-0 sm:border-r border-brand-text/10">
+              <p className="text-secondary text-[10px] font-medium uppercase tracking-[4px] mb-4">Our Mission</p>
+              <h3 className="font-display text-2xl font-medium text-brand-text uppercase tracking-widest mb-4">What We Do</h3>
+              <p className="text-brand-text/65 text-sm leading-relaxed font-light">
+                To deliver professional business support that empowers organisations to operate more efficiently, grow strategically, and achieve their full potential.
+              </p>
+            </div>
+            <div className="p-8 lg:p-10">
+              <p className="text-secondary text-[10px] font-medium uppercase tracking-[4px] mb-4">Our Vision</p>
+              <h3 className="font-display text-2xl font-medium text-brand-text uppercase tracking-widest mb-4">Where We&apos;re Going</h3>
+              <p className="text-brand-text/65 text-sm leading-relaxed font-light">
+                To be the most trusted partner for businesses seeking operational excellence — where every organisation has access to the support it needs to succeed.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="bg-brand-bg py-20 lg:py-28">
+      {/* ── Core Values ───────────────────────────────────────────────── */}
+      <section className="bg-primary py-24 lg:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ClipReveal className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-3">
-              What Drives Us
-            </p>
-            <h2 className="font-display text-3xl lg:text-4xl font-medium text-brand-text leading-tight uppercase tracking-widest">
-              Our Values
-            </h2>
-          </ClipReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 pb-14 border-b border-white/10 mb-10">
+            <ClipReveal className="max-w-2xl">
+              <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-5">
+                What Drives Us
+              </p>
+              <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-medium text-white leading-[1.05] uppercase tracking-widest">
+                Our Core Values
+              </h2>
+            </ClipReveal>
+            <FadeUp delay={0.2} className="max-w-sm">
+              <p className="text-white/35 font-light leading-relaxed text-sm">
+                These six principles are not slogans — they are the standards our team holds itself to, in every interaction and every deliverable.
+              </p>
+            </FadeUp>
+          </div>
+
+          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/6">
             {values.map((value, idx) => (
-              <CardTilt
-                key={idx}
-                className="relative bg-white border border-brand-text/10 p-7 hover:border-brand-text/20 hover:shadow-sm transition-all duration-200"
-              >
-                <div className="w-11 h-11 bg-primary/10 flex items-center justify-center mb-5">
-                  <value.icon size={20} className="text-primary" />
+              <StaggerItem key={idx}>
+                <div className="group bg-primary p-8 lg:p-10 hover:bg-gold/4 transition-colors duration-300 h-full flex flex-col gap-6 border border-transparent hover:border-gold/20">
+                  <div className="flex items-start justify-between">
+                    <div className="w-11 h-11 border border-white/10 group-hover:border-gold/40 flex items-center justify-center transition-colors duration-300">
+                      <value.icon size={18} className="text-white/30 group-hover:text-gold transition-colors duration-300" />
+                    </div>
+                    <span className="font-display text-5xl font-semibold text-white/4 group-hover:text-gold/10 leading-none transition-colors duration-500 select-none">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-medium text-white/80 group-hover:text-white transition-colors duration-300 uppercase tracking-widest mb-3">
+                      {value.title}
+                    </h3>
+                    <p className="text-white/40 text-sm leading-[1.85] font-light group-hover:text-white/55 transition-colors duration-300">
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-brand-text font-semibold text-lg mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-brand-text/60 text-sm leading-relaxed font-light">
-                  {value.description}
-                </p>
-              </CardTilt>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="bg-white py-20 lg:py-28">
+      {/* ── Our Team ──────────────────────────────────────────────────── */}
+      <section className="bg-brand-bg py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="relative h-56 mb-5">
-                <Image
-                  src="/assets/about-team.svg"
-                  alt="The Execura Team"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="grid grid-cols-1 gap-4">
-                {[
-                  {
-                    title: "Diverse Expertise",
-                    text: "Our professionals come from varied backgrounds including corporate administration, executive assistance, project management, operations, and customer service.",
-                  },
-                  {
-                    title: "Continuous Training",
-                    text: "We invest in ongoing professional development, ensuring our team stays current with the latest tools, technologies, and best practices.",
-                  },
-                  {
-                    title: "Client-Centric Approach",
-                    text: "Every team member is selected not just for skills, but for their dedication to service excellence and ability to build strong, productive client relationships.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex gap-4 p-5 bg-brand-bg border border-brand-text/10"
-                  >
-                    <div className="w-8 h-8 bg-secondary flex items-center justify-center text-white font-semibold text-xs shrink-0 mt-0.5">
-                      {String(idx + 1).padStart(2, "0")}
-                    </div>
-                    <div>
-                      <h4 className="text-brand-text font-semibold mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-brand-text/60 text-sm leading-relaxed font-light">
-                        {item.text}
-                      </p>
+
+          <ClipReveal className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-4">
+              Our Team
+            </p>
+            <h2 className="font-display text-4xl lg:text-5xl font-medium text-brand-text leading-tight uppercase tracking-widest mb-4">
+              The People Behind Your Success
+            </h2>
+            <p className="text-brand-text/50 font-light text-sm leading-relaxed">
+              Led by experienced professionals who built Execura from the ground up with one purpose: to be the business partner they wished theyd had.
+            </p>
+          </ClipReveal>
+
+          <StaggerChildren className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {team.map((member, idx) => (
+              <StaggerItem key={idx}>
+                <div className="group bg-white overflow-hidden shadow-[0px_4px_24px_0px_rgba(0,0,0,0.06)] hover:shadow-[0px_8px_40px_0px_rgba(0,0,0,0.10)] transition-shadow duration-300">
+                  {/* Photo */}
+                  <div className="relative w-full aspect-4/5 overflow-hidden">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-primary/60 via-transparent to-transparent" />
+                    {/* Name overlay on photo */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <p className="text-gold text-[10px] font-medium uppercase tracking-[4px] mb-1">{member.role}</p>
+                      <h3 className="font-display text-2xl font-medium text-white uppercase tracking-wide">{member.name}</h3>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <ClipReveal>
-                <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-3">
-                  Our Team
-                </p>
-                <h2 className="font-display text-3xl lg:text-4xl font-medium text-brand-text leading-tight mb-6 uppercase tracking-widest">
-                  Meet the Professionals Behind Your Success
-                </h2>
-              </ClipReveal>
-              <p className="text-brand-text/70 leading-relaxed mb-8 font-light">
-                Our team is our greatest asset. Each member of Execura Support
-                Solutions brings specialized expertise, professional credentials,
-                and a genuine commitment to client success.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-wider transition-colors duration-150"
-              >
-                Work With Us
-                <ArrowRight size={15} />
-              </Link>
-            </div>
-          </div>
+                  {/* Bio */}
+                  <div className="p-7 border-t border-brand-text/8">
+                    <p className="text-brand-text/65 text-sm leading-[1.85] font-light mb-5">
+                      {member.bio}
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <a
+                        href="#"
+                        className="w-8 h-8 border border-brand-text/10 flex items-center justify-center hover:border-primary hover:bg-primary transition-colors duration-200 group/icon"
+                        aria-label={`${member.name} LinkedIn`}
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-brand-text/30 group-hover/icon:text-white transition-colors duration-200">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+
         </div>
       </section>
 
-      {/* Process */}
-      <section className="bg-primary py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ClipReveal className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-3">
-              How We Work
+      {/* ── CTA ───────────────────────────────────────────────────────── */}
+      <section className="bg-primary py-24 lg:py-32 overflow-hidden relative">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute left-1/4 top-0 bottom-0 w-px bg-white/4" />
+          <div className="absolute left-3/4 top-0 bottom-0 w-px bg-white/4" />
+        </div>
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
+          <FadeUp>
+            <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-6">
+              Partner With Us
             </p>
-            <h2 className="font-display text-3xl lg:text-4xl font-medium text-white leading-tight uppercase tracking-widest">
-              Our Process
+          </FadeUp>
+          <ClipReveal>
+            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-medium text-white mb-6 uppercase tracking-widest leading-[1.05]">
+              Experience the<br />Execura Difference
             </h2>
           </ClipReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {process.map((step, idx) => (
-              <CardTilt
-                key={idx}
-                className={`relative p-7 border ${
-                  idx === 0
-                    ? "bg-secondary border-secondary/80"
-                    : "border-white/10 hover:border-white/20 hover:bg-white/5 transition-all duration-200"
-                }`}
+          <FadeUp delay={0.2}>
+            <p className="text-white/45 text-lg leading-relaxed mb-12 max-w-2xl mx-auto font-light">
+              Partner with a team that is genuinely invested in your success. Let&apos;s explore how we can support your business goals — starting today.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gold hover:bg-gold/90 text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
               >
-                <div
-                  className={`font-display text-3xl font-semibold mb-4 ${
-                    idx === 0 ? "text-white/30" : "text-white/20"
-                  }`}
-                >
-                  {step.number}
-                </div>
-                <h3 className="text-white font-semibold text-lg mb-3">
-                  {step.title}
-                </h3>
-                <p
-                  className={`text-sm leading-relaxed font-light ${
-                    idx === 0 ? "text-white/80" : "text-white/60"
-                  }`}
-                >
-                  {step.description}
-                </p>
-              </CardTilt>
-            ))}
-          </div>
+                Book a Free Consultation
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-3 px-8 py-4 border border-white/20 hover:border-white/50 text-white/70 hover:text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
+              >
+                Explore Our Services
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-secondary py-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-medium text-white mb-5 uppercase tracking-widest">
-            Experience the Execura Difference
-          </h2>
-          <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-2xl mx-auto font-light">
-            Partner with a team that&apos;s invested in your success. Let&apos;s
-            explore how we can support your business goals.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-semibold uppercase tracking-wider hover:bg-brand-bg transition-colors duration-150"
-          >
-            Contact Us Today
-            <ArrowRight size={16} />
-          </Link>
+      {/* ── Our Process ───────────────────────────────────────────────── */}
+      <section className="bg-white py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ClipReveal className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-4">
+              Our Process
+            </p>
+            <h2 className="font-display text-3xl lg:text-4xl font-medium text-brand-text leading-tight mb-4 uppercase tracking-widest">
+              Simple. Proven. 4 Steps.
+            </h2>
+            <p className="text-brand-text/60 font-light">
+              Getting started is straightforward. Our 4-step process ensures you receive the right support, delivered the right way, from day one.
+            </p>
+          </ClipReveal>
+
+          <StaggerChildren>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-14 lg:gap-0">
+              {processSteps.map((step) => (
+                <StaggerItem key={step.number}>
+                  <div className="relative flex flex-col items-center text-center px-4 lg:px-6">
+                    {/* Circle icon */}
+                    <div className="relative w-20 h-20 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-5 z-10">
+                      <step.icon size={28} className="text-secondary" />
+                    </div>
+                    {/* Step label */}
+                    <p className="text-secondary/70 text-[10px] font-medium uppercase tracking-[4px] mb-1.5">
+                      Step {step.number}
+                    </p>
+                    {/* Title */}
+                    <h3 className="font-display text-base font-semibold text-brand-text mb-2 uppercase tracking-wide">
+                      {step.title}
+                    </h3>
+                    {/* Description */}
+                    <p className="text-brand-text/60 text-sm leading-relaxed font-light max-w-[180px] mx-auto">
+                      {step.desc}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerChildren>
+
+          <FadeUp className="text-center mt-14" delay={0.1}>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
+            >
+              Start with a Free Consultation
+              <ArrowRight size={14} />
+            </Link>
+          </FadeUp>
         </div>
       </section>
+
+      
     </>
   );
 }

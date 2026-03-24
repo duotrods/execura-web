@@ -111,13 +111,25 @@ const advantages = [
   },
 ];
 
-const trustIndicators = [
-  "5+ Years of Industry Experience",
-  "500+ Projects Successfully Completed",
-  "98% Client Satisfaction Rate",
-  "Dedicated Support Team",
-  "Confidentiality Guaranteed",
-  "Flexible Service Packages",
+const reviews = [
+  {
+    text: "Execura completely transformed how I manage my inbox and calendar. I went from drowning in emails to having full control of my day. Their team is professional, responsive, and genuinely invested in your success.",
+    name: "Sarah M.",
+    role: "Founder & CEO",
+    initials: "SM",
+  },
+  {
+    text: "The automation solutions Execura built for us saved our team over 15 hours a week. The implementation was seamless and the ongoing support has been outstanding. I can't imagine running our business without them.",
+    name: "James T.",
+    role: "Operations Director",
+    initials: "JT",
+  },
+  {
+    text: "From the first consultation to ongoing support, every interaction with Execura has been exceptional. Their executive assistance service is truly high-caliber — like having a top-tier EA without the full-time cost.",
+    name: "Michelle L.",
+    role: "Business Owner",
+    initials: "ML",
+  },
 ];
 
 export default function HomePage() {
@@ -479,24 +491,77 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="bg-brand-bg py-16">
+      {/* Google Reviews */}
+      <section className="bg-brand-bg py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <FadeUp className="text-center mb-10">
-            <h2 className="font-display text-2xl lg:text-3xl font-medium text-brand-text uppercase tracking-widest">
-              Trusted by Businesses Across Industries
+
+          {/* Header */}
+          <ClipReveal className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-secondary text-sm font-light uppercase tracking-[6px] mb-4">
+              Reviews
+            </p>
+            <h2 className="font-display text-3xl lg:text-4xl font-medium text-brand-text leading-tight uppercase tracking-widest">
+              Here&apos;s What Our Clients Are Saying
             </h2>
+          </ClipReveal>
+
+          {/* Google badge */}
+          <FadeUp delay={0.1} className="flex justify-center mb-12">
+            <div className="flex items-center gap-3 bg-white border border-brand-text/10 px-5 py-2.5 shadow-sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" className="shrink-0">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              <div className="flex items-center gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} size={13} fill="#c9a962" className="text-gold" />
+                ))}
+              </div>
+              <span className="text-brand-text/50 text-sm font-light">5.0 · Google Reviews</span>
+            </div>
           </FadeUp>
-          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {trustIndicators.map((item, idx) => (
+
+          {/* Review cards */}
+          <StaggerChildren className="grid md:grid-cols-3 gap-6">
+            {reviews.map((review, idx) => (
               <StaggerItem key={idx}>
-                <div className="flex items-center gap-3 bg-white border border-brand-text/10 px-5 py-3.5">
-                  <CheckCircle2 size={16} className="text-secondary shrink-0" />
-                  <span className="text-brand-text/70 text-sm">{item}</span>
+                <div className="bg-white shadow-[0px_4px_16px_0px_rgba(0,0,0,0.05)] p-8 h-full flex flex-col">
+                  {/* Quote icon + stars */}
+                  <div className="flex items-center justify-between mb-7">
+                    <div className="w-11 h-11 rounded-full bg-primary flex items-center justify-center shrink-0">
+                      <svg width="18" height="14" viewBox="0 0 20 16" fill="none">
+                        <path d="M0 16V9.6C0 6.4 1.2 3.6 3.6 1.2L5.6 3.2C4.267 4.267 3.467 5.733 3.2 7.6H6.4V16H0ZM13.6 16V9.6C13.6 6.4 14.8 3.6 17.2 1.2L19.2 3.2C17.867 4.267 17.067 5.733 16.8 7.6H20V16H13.6Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <div className="flex items-center gap-0.5">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} size={15} fill="#c9a962" className="text-gold" />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Review text */}
+                  <p className="text-brand-text/70 text-sm leading-[1.9] font-light flex-1 mb-7">
+                    &ldquo;{review.text}&rdquo;
+                  </p>
+
+                  {/* Reviewer */}
+                  <div className="flex items-center gap-3 pt-5 border-t border-brand-text/8">
+                    <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0">
+                      <span className="text-white text-[10px] font-semibold tracking-wide">{review.initials}</span>
+                    </div>
+                    <div>
+                      <p className="text-brand-text font-medium text-sm">{review.name}</p>
+                      <p className="text-brand-text/40 text-xs font-light">{review.role}</p>
+                    </div>
+                  </div>
                 </div>
               </StaggerItem>
             ))}
           </StaggerChildren>
+
         </div>
       </section>
 
