@@ -281,7 +281,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 text-secondary hover:gap-4 font-medium text-sm transition-all duration-200 uppercase tracking-[3px]"
+                className="inline-flex items-center gap-2 text-gold hover:gap-4 font-medium text-sm transition-all duration-200 uppercase tracking-[3px]"
               >
                 Explore All Services
                 <ArrowRight size={14} />
