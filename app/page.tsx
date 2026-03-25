@@ -138,16 +138,14 @@ export default function HomePage() {
       {/* Hero — full-bleed with overlay */}
       <section data-hero-section className="relative min-h-screen flex items-center overflow-hidden">
         <ParallaxHero />
-        {/* Background video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/assets/hero.mp4" type="video/mp4" />
-        </video>
+        {/* Background image */}
+        <Image
+          src="/assets/hero.webp"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/92 to-primary/60" />
         {/* Subtle grid pattern — targeted by ParallaxHero */}
