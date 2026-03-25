@@ -121,18 +121,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[72vh] flex items-end overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/assets/hero3.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/88 to-primary/40" />
-        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/30 to-transparent" />
+      <section className="relative min-h-[72vh] flex items-end overflow-hidden bg-primary">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-size-[64px_64px]" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-32 pb-14 lg:pb-20">

@@ -24,19 +24,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero — full-bleed image */}
-      <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/assets/hero3.mp4" type="video/mp4" />
-        </video>
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/88 to-primary/55" />
-        <div className="absolute inset-0 bg-linear-to-t from-primary via-transparent to-transparent" />
+      <section className="relative min-h-[80vh] flex items-end overflow-hidden bg-primary">
         {/* Subtle grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[64px_64px]" />
 
