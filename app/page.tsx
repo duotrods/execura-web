@@ -262,7 +262,7 @@ export default function HomePage() {
             <FadeUp delay={0.2}>
               <div className="relative w-full aspect-4/5 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+                  src="/assets/aboutus.jpg"
                   alt="Execura team collaborating on business solutions"
                   fill
                   className="object-cover"
@@ -285,7 +285,7 @@ export default function HomePage() {
               <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-5">
                 What We Offer
               </p>
-              <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-medium text-white leading-[1.05] uppercase tracking-widest">
+              <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl font-medium text-white leading-[1.05] uppercase tracking-widest">
                 Precision Support,<br className="hidden lg:block" /> Built Around You
               </h2>
             </ClipReveal>

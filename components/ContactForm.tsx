@@ -15,10 +15,46 @@ const services = [
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = {
+      firstName: (form.elements.namedItem("firstName") as HTMLInputElement).value,
+      lastName: (form.elements.namedItem("lastName") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      service: (form.elements.namedItem("service") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.status === 429) {
+        setError("Too many requests. Please wait a minute and try again.");
+        return;
+      }
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error ?? "Failed to send");
+      }
+      setSubmitted(true);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -47,6 +83,7 @@ export default function ContactForm() {
             First Name <span className="text-gold">*</span>
           </label>
           <input
+            name="firstName"
             type="text"
             required
             placeholder="Jane"
@@ -58,6 +95,7 @@ export default function ContactForm() {
             Last Name <span className="text-gold">*</span>
           </label>
           <input
+            name="lastName"
             type="text"
             required
             placeholder="Smith"
@@ -71,6 +109,7 @@ export default function ContactForm() {
           Email Address <span className="text-gold">*</span>
         </label>
         <input
+          name="email"
           type="email"
           required
           placeholder="jane@company.com"
@@ -83,6 +122,7 @@ export default function ContactForm() {
           Phone Number
         </label>
         <input
+          name="phone"
           type="tel"
           placeholder="+1 (234) 567-890"
           className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text placeholder-brand-text/25 text-sm focus:outline-none focus:border-primary transition-colors duration-150"
@@ -94,6 +134,7 @@ export default function ContactForm() {
           Company Name
         </label>
         <input
+          name="company"
           type="text"
           placeholder="Acme Inc."
           className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text placeholder-brand-text/25 text-sm focus:outline-none focus:border-primary transition-colors duration-150"
@@ -105,6 +146,7 @@ export default function ContactForm() {
           Service of Interest <span className="text-gold">*</span>
         </label>
         <select
+          name="service"
           required
           defaultValue=""
           className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text text-sm focus:outline-none focus:border-primary transition-colors duration-150"
@@ -125,6 +167,7 @@ export default function ContactForm() {
           Tell Us About Your Needs <span className="text-gold">*</span>
         </label>
         <textarea
+          name="message"
           required
           rows={4}
           placeholder="Describe your business support needs, current challenges, and what you're looking to achieve..."
@@ -132,12 +175,17 @@ export default function ContactForm() {
         />
       </div>
 
+      {error && (
+        <p className="text-sm text-red-500 font-light">{error}</p>
+      )}
+
       <button
         type="submit"
-        className="w-full flex items-center justify-center gap-2.5 py-4 bg-primary hover:bg-primary/90 text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
+        disabled={loading}
+        className="w-full flex items-center justify-center gap-2.5 py-4 bg-primary hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
       >
-        Schedule Free Consultation
-        <ArrowRight size={15} />
+        {loading ? "Sending…" : "Schedule Free Consultation"}
+        {!loading && <ArrowRight size={15} />}
       </button>
 
       <p className="text-[11px] text-brand-text/35 text-center font-light leading-relaxed">

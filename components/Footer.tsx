@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 
 const footerLinks = {
   company: [
@@ -36,20 +36,20 @@ export default function Footer() {
               to operate more efficiently and achieve their full potential.
             </p>
             <div className="flex items-center gap-3">
-              <a
+              {/* <a
                 href="#"
                 className="w-8 h-8 rounded border border-white/20 flex items-center justify-center hover:border-gold hover:text-gold transition-colors duration-150"
               >
                 <Linkedin size={14} />
-              </a>
+              </a> */}
               <a
-                href="#"
+                href="https://www.instagram.com/execurasupportph/"
                 className="w-8 h-8 rounded border border-white/20 flex items-center justify-center hover:border-gold hover:text-gold transition-colors duration-150"
               >
-                <Twitter size={14} />
+                <Instagram  size={14} />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61577433923967"
                 className="w-8 h-8 rounded border border-white/20 flex items-center justify-center hover:border-gold hover:text-gold transition-colors duration-150"
               >
                 <Facebook size={14} />

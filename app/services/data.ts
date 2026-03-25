@@ -408,9 +408,9 @@ export const services: Service[] = [
     ],
     relatedSlugs: ["admin-support", "operations", "automation"],
     heroImage:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1400&q=80",
+      "/assets/executive.jpg",
     overviewImage:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80",
+      "/assets/executive2.jpg",
     stats: [
       { value: "C-Suite", label: "Leadership Supported" },
       { value: "100%", label: "Confidential" },
@@ -532,7 +532,7 @@ export const services: Service[] = [
     heroImage:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
     overviewImage:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80",
+      "/assets/business.jpg",
     stats: [
       { value: "2x", label: "Efficiency Gains" },
       { value: "30%", label: "Cost Reduction" },
