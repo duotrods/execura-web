@@ -56,7 +56,6 @@ export default async function ServiceDetailPage({
       >
         <ParallaxHero />
 
-        {/* Background image */}
         <Image
           src={service.heroImage}
           alt={service.title}
@@ -64,21 +63,16 @@ export default async function ServiceDetailPage({
           className="object-cover"
           priority
         />
-
-        {/* Gradient overlays */}
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/88 to-primary/40" />
         <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/30 to-transparent" />
-
-        {/* Subtle grid */}
         <div
           data-hero-grid
           className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-size-[64px_64px] will-change-transform"
         />
 
-        {/* Content */}
         <div
           data-hero-content
-          className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-32 pb-12 lg:pb-20 will-change-transform"
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-32 pb-14 lg:pb-20 will-change-transform"
         >
           <HeroContent className="max-w-3xl">
             <HeroItem>
@@ -90,7 +84,6 @@ export default async function ServiceDetailPage({
                 All Services
               </Link>
             </HeroItem>
-
             <HeroItem>
               <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center mb-7">
                 <service.icon size={26} className="text-gold" />
@@ -98,17 +91,15 @@ export default async function ServiceDetailPage({
               <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-4">
                 {service.subtitle}
               </p>
-              <h1 className="font-display text-4xl lg:text-6xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
+              <h1 className="font-display text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
                 {service.title}
               </h1>
             </HeroItem>
-
             <HeroItem>
               <p className="text-white/70 text-lg leading-relaxed mb-10 font-light max-w-2xl">
                 {service.shortDescription}
               </p>
             </HeroItem>
-
             <HeroItem>
               <div className="flex flex-wrap gap-4">
                 <Link

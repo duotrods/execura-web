@@ -23,16 +23,17 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="text-center py-10">
-        <div className="w-14 h-14 bg-primary/10 flex items-center justify-center mx-auto mb-5">
-          <CheckCircle2 size={28} className="text-secondary" />
+      <div className="text-center py-12">
+        <div className="w-16 h-16 bg-gold/10 border border-gold/25 flex items-center justify-center mx-auto mb-6">
+          <CheckCircle2 size={28} className="text-gold" />
         </div>
-        <h3 className="font-display text-brand-text font-medium text-xl mb-3 uppercase tracking-widest">
-          Thank You for Reaching Out!
+        <p className="text-gold text-xs font-light uppercase tracking-[5px] mb-3">Message Received</p>
+        <h3 className="font-display text-brand-text font-medium text-2xl mb-3 uppercase tracking-widest">
+          Thank You for Reaching Out
         </h3>
-        <p className="text-brand-text/60 text-sm leading-relaxed max-w-sm mx-auto font-light">
-          We&apos;ve received your message and will be in touch within one
-          business day to schedule your free consultation.
+        <p className="text-brand-text/55 text-sm leading-relaxed max-w-sm mx-auto font-light">
+          We&apos;ve received your enquiry and a member of our team will be in
+          touch within one business day to schedule your free consultation.
         </p>
       </div>
     );
@@ -42,71 +43,71 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-xs font-semibold text-brand-text/60 uppercase tracking-wider mb-1.5">
-            First Name <span className="text-secondary">*</span>
+          <label className="block text-[10px] font-medium text-brand-text/45 uppercase tracking-[4px] mb-2">
+            First Name <span className="text-gold">*</span>
           </label>
           <input
             type="text"
             required
             placeholder="Jane"
-            className="w-full px-4 py-3 border border-brand-text/20 bg-white text-brand-text placeholder-brand-text/30 text-sm focus:outline-none focus:border-secondary transition-colors duration-150"
+            className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text placeholder-brand-text/25 text-sm focus:outline-none focus:border-primary transition-colors duration-150"
           />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-brand-text/60 uppercase tracking-wider mb-1.5">
-            Last Name <span className="text-secondary">*</span>
+          <label className="block text-[10px] font-medium text-brand-text/45 uppercase tracking-[4px] mb-2">
+            Last Name <span className="text-gold">*</span>
           </label>
           <input
             type="text"
             required
             placeholder="Smith"
-            className="w-full px-4 py-3 border border-brand-text/20 bg-white text-brand-text placeholder-brand-text/30 text-sm focus:outline-none focus:border-secondary transition-colors duration-150"
+            className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text placeholder-brand-text/25 text-sm focus:outline-none focus:border-primary transition-colors duration-150"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-brand-text/60 uppercase tracking-wider mb-1.5">
-          Email Address <span className="text-secondary">*</span>
+        <label className="block text-[10px] font-medium text-brand-text/45 uppercase tracking-[4px] mb-2">
+          Email Address <span className="text-gold">*</span>
         </label>
         <input
           type="email"
           required
           placeholder="jane@company.com"
-          className="w-full px-4 py-3 border border-brand-text/20 bg-white text-brand-text placeholder-brand-text/30 text-sm focus:outline-none focus:border-secondary transition-colors duration-150"
+          className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text placeholder-brand-text/25 text-sm focus:outline-none focus:border-primary transition-colors duration-150"
         />
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-brand-text/60 uppercase tracking-wider mb-1.5">
+        <label className="block text-[10px] font-medium text-brand-text/45 uppercase tracking-[4px] mb-2">
           Phone Number
         </label>
         <input
           type="tel"
           placeholder="+1 (234) 567-890"
-          className="w-full px-4 py-3 border border-brand-text/20 bg-white text-brand-text placeholder-brand-text/30 text-sm focus:outline-none focus:border-secondary transition-colors duration-150"
+          className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text placeholder-brand-text/25 text-sm focus:outline-none focus:border-primary transition-colors duration-150"
         />
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-brand-text/60 uppercase tracking-wider mb-1.5">
+        <label className="block text-[10px] font-medium text-brand-text/45 uppercase tracking-[4px] mb-2">
           Company Name
         </label>
         <input
           type="text"
           placeholder="Acme Inc."
-          className="w-full px-4 py-3 border border-brand-text/20 bg-white text-brand-text placeholder-brand-text/30 text-sm focus:outline-none focus:border-secondary transition-colors duration-150"
+          className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text placeholder-brand-text/25 text-sm focus:outline-none focus:border-primary transition-colors duration-150"
         />
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-brand-text/60 uppercase tracking-wider mb-1.5">
-          Service of Interest <span className="text-secondary">*</span>
+        <label className="block text-[10px] font-medium text-brand-text/45 uppercase tracking-[4px] mb-2">
+          Service of Interest <span className="text-gold">*</span>
         </label>
         <select
           required
           defaultValue=""
-          className="w-full px-4 py-3 border border-brand-text/20 bg-white text-brand-text text-sm focus:outline-none focus:border-secondary transition-colors duration-150"
+          className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text text-sm focus:outline-none focus:border-primary transition-colors duration-150"
         >
           <option value="" disabled>
             Select a service...
@@ -120,28 +121,28 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-brand-text/60 uppercase tracking-wider mb-1.5">
-          Tell Us About Your Needs <span className="text-secondary">*</span>
+        <label className="block text-[10px] font-medium text-brand-text/45 uppercase tracking-[4px] mb-2">
+          Tell Us About Your Needs <span className="text-gold">*</span>
         </label>
         <textarea
           required
           rows={4}
           placeholder="Describe your business support needs, current challenges, and what you're looking to achieve..."
-          className="w-full px-4 py-3 border border-brand-text/20 bg-white text-brand-text placeholder-brand-text/30 text-sm focus:outline-none focus:border-secondary transition-colors duration-150 resize-none"
+          className="w-full px-4 py-3.5 border border-brand-text/15 bg-white text-brand-text placeholder-brand-text/25 text-sm focus:outline-none focus:border-primary transition-colors duration-150 resize-none"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full flex items-center justify-center gap-2 py-3.5 bg-secondary hover:bg-secondary/90 text-white font-semibold uppercase tracking-wider transition-colors duration-150"
+        className="w-full flex items-center justify-center gap-2.5 py-4 bg-primary hover:bg-primary/90 text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
       >
-        Send Message
-        <ArrowRight size={16} />
+        Schedule Free Consultation
+        <ArrowRight size={15} />
       </button>
 
-      <p className="text-xs text-brand-text/40 text-center font-light">
-        By submitting this form, you agree to our privacy policy. We respect
-        your privacy and will never share your information.
+      <p className="text-[11px] text-brand-text/35 text-center font-light leading-relaxed">
+        By submitting this form you agree to our privacy policy. Your
+        information is kept confidential and never shared with third parties.
       </p>
     </form>
   );

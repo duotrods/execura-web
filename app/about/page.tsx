@@ -20,6 +20,8 @@ import {
   StaggerChildren,
   StaggerItem,
   RevealLine,
+  HeroContent,
+  HeroItem
 } from "@/components/Motion";
 
 export const metadata: Metadata = {
@@ -119,20 +121,50 @@ export default function AboutPage() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="bg-primary pt-32 pb-20 lg:pt-40 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
+      <section className="relative min-h-[72vh] flex items-end overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80"
+          alt="Execura Support Solutions team"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/88 to-primary/40" />
+        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/30 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-size-[64px_64px]" />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-32 pb-14 lg:pb-20">
+          {/* <FadeUp className="max-w-3xl">
             <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-4">
               About Us
             </p>
             <h1 className="font-display text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-widest mb-5 uppercase">
               Empowering Businesses Through Exceptional Support
             </h1>
-            <p className="text-white/60 text-lg leading-relaxed font-light">
+            <p className="text-white/65 text-lg leading-relaxed font-light max-w-2xl">
               Built on expertise, driven by excellence, and committed to your success — every step of the way.
             </p>
-          </div>
+          </FadeUp> */}
+          <HeroContent className="max-w-3xl">
+                      
+                      <HeroItem>
+                        <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-4">
+                           About Us
+                        </p>
+                        <h1 className="font-display text-4xl lg:text-6xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
+                           Built Different. Proven Daily.
+                        </h1>
+                      </HeroItem>
+                      <HeroItem>
+                        <p className="text-white/70 text-lg leading-relaxed mb-10 font-light">
+                          Built on expertise, driven by excellence, and committed to your success — every step of the way.
+                        </p>
+                      </HeroItem>
+                      
+                    </HeroContent>
         </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-primary to-transparent" />
       </section>
 
       {/* ── Our Story ─────────────────────────────────────────────────── */}

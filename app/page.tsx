@@ -406,8 +406,8 @@ export default function HomePage() {
                 <StaggerItem key={step.number}>
                   <div className="relative flex flex-col items-center text-center px-4 lg:px-6">
                     {/* Circle icon */}
-                    <div className="relative w-20 h-20 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-5 z-10">
-                      <step.icon size={28} className="text-secondary" />
+                    <div className="relative w-20 h-20 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mb-5 z-10">
+                      <step.icon size={28} className="text-gold" />
                     </div>
                     {/* Step label */}
                     <p className="text-secondary/70 text-[10px] font-medium uppercase tracking-[4px] mb-1.5">
