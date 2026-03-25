@@ -34,7 +34,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
             <Image src="/assets/Icon.svg" alt="Execura" width={32} height={32} className="rounded" />
-            <span className="text-white font-semibold text-lg tracking-tight">
+            <span className="font-display uppercase text-xl text-white  tracking-tight">
               Execura
             </span>
           </Link>

@@ -73,18 +73,18 @@ const team = [
   {
     name: "Ley Jazzie Alicaway",
     role: "CEO & Founder",
-    bio: "With over a decade of experience in executive operations and business strategy, Alexandra founded Execura with a vision to give every business access to world-class support — without the overhead of full-time hires.",
-    image:
-      "/assets/ley jazzie.jpeg",
+    bio: "With over a 3 years of experience in executive operations and business strategy, Ley founded Execura with a vision to give every business access to world-class support — without the overhead of full-time hires.",
+    image: "/assets/ley jazzie.jpeg",
     initials: "LA",
+    linkedin: "https://www.linkedin.com/in/alicaway-ley-jazzie/", // ← replace with Ley Jazzie's LinkedIn URL
   },
   {
     name: "Rod Olinor Du-ot",
     role: "Co-Founder & COO",
-    bio: "Daniel brings deep expertise in operations, process design, and automation. He leads Execura's service delivery and ensures every client engagement is backed by rigorous systems and a high-performing team.",
-    image:
-      "/assets/RR.JPG",
+    bio: "Rod brings deep expertise in website, process design, and automation. He leads Execura's service delivery and ensures every client engagement is backed by rigorous systems and a high-performing team.",
+    image: "/assets/rr 1.png",
     initials: "RD",
+    linkedin: "https://www.linkedin.com/in/rod-olinor-du-ot-87a912278/", // ← replace with Rod's LinkedIn URL
   },
 ];
 
@@ -167,40 +167,33 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Image */}
-            <div className="relative w-full overflow-hidden">
-              <Image
-                src="/assets/aboutus.JPG"
-                alt="The Execura team at work"
-                width={0}
-                height={0}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="w-full h-auto"
-              />
+            {/* Image + Mission/Vision */}
+            <div className="flex flex-col gap-6">
+              <div className="relative w-full aspect-4/3 overflow-hidden">
+                <Image
+                  src="/assets/aboutus.JPG"
+                  alt="The Execura team at work"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <div className="grid sm:grid-cols-2 gap-0 border border-brand-text/10">
+                <div className="p-7 border-b sm:border-b-0 sm:border-r border-brand-text/10">
+                  <p className="text-secondary text-[10px] font-medium uppercase tracking-[4px] mb-3">Our Mission</p>
+                  <p className="text-brand-text/70 text-sm leading-relaxed font-light">
+                    To deliver professional business support that empowers organisations to operate more efficiently, grow strategically, and achieve their full potential.
+                  </p>
+                </div>
+                <div className="p-7">
+                  <p className="text-secondary text-[10px] font-medium uppercase tracking-[4px] mb-3">Our Vision</p>
+                  <p className="text-brand-text/70 text-sm leading-relaxed font-light">
+                    To be the most trusted partner for businesses seeking operational excellence — where every organisation has access to the support it needs to succeed.
+                  </p>
+                </div>
+              </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* ── Mission & Vision ──────────────────────────────────────────── */}
-      <section className="bg-brand-bg py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 gap-0 border border-brand-text/10 bg-white">
-            <div className="p-8 lg:p-10 border-b sm:border-b-0 sm:border-r border-brand-text/10">
-              <p className="text-secondary text-[10px] font-medium uppercase tracking-[4px] mb-4">Our Mission</p>
-              <h3 className="font-display text-2xl font-medium text-brand-text uppercase tracking-widest mb-4">What We Do</h3>
-              <p className="text-brand-text/65 text-sm leading-relaxed font-light">
-                To deliver professional business support that empowers organisations to operate more efficiently, grow strategically, and achieve their full potential.
-              </p>
-            </div>
-            <div className="p-8 lg:p-10">
-              <p className="text-secondary text-[10px] font-medium uppercase tracking-[4px] mb-4">Our Vision</p>
-              <h3 className="font-display text-2xl font-medium text-brand-text uppercase tracking-widest mb-4">Where We&apos;re Going</h3>
-              <p className="text-brand-text/65 text-sm leading-relaxed font-light">
-                To be the most trusted partner for businesses seeking operational excellence — where every organisation has access to the support it needs to succeed.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -294,7 +287,9 @@ export default function AboutPage() {
                     </p>
                     <div className="flex items-center gap-3">
                       <a
-                        href="#"
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-8 h-8 border border-brand-text/10 flex items-center justify-center hover:border-primary hover:bg-primary transition-colors duration-200 group/icon"
                         aria-label={`${member.name} LinkedIn`}
                       >
@@ -336,7 +331,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gold hover:bg-gold/90 text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
               >
                 Book a Free Consultation
                 <ArrowRight size={14} />
