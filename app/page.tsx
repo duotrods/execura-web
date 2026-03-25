@@ -146,7 +146,7 @@ export default function HomePage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/assets/hero4.mp4" type="video/mp4" />
+          <source src="/assets/hero.mp4" type="video/mp4" />
         </video>
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/92 to-primary/60" />
