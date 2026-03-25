@@ -122,13 +122,15 @@ export default function AboutPage() {
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-[72vh] flex items-end overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80"
-          alt="Execura Support Solutions team"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/assets/hero3.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/88 to-primary/40" />
         <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/30 to-transparent" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-size-[64px_64px]" />
@@ -203,7 +205,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-6">
               <div className="relative w-full aspect-4/3 overflow-hidden">
                 <Image
-                  src="/assets/aboutus.JPG"
+                  src="/assets/aboutus.jpg"
                   alt="The Execura team at work"
                   fill
                   className="object-cover"

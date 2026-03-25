@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Mail, Phone, Clock, MapPin } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { ClipReveal } from "@/components/gsap/ClipReveal";
@@ -43,13 +42,15 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-end overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1800&q=80"
-          alt="Contact Execura Support Solutions"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/assets/hero3.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/88 to-primary/40" />
         <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/30 to-transparent" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-size-[64px_64px]" />

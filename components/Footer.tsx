@@ -103,19 +103,25 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm">
                 <Mail size={15} className="mt-0.5 text-gold shrink-0" />
-                <a href="mailto:hello@execura.com" className="hover:text-white transition-colors duration-150">
-                  hello@execura.com
+                <a href="mailto:execurasupport@gmail.com" className="hover:text-white transition-colors duration-150">
+                  execurasupport@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <Phone size={15} className="mt-0.5 text-gold shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-white transition-colors duration-150">
-                  +1 (234) 567-890
+                <a href="tel:+639515305128" className="hover:text-white transition-colors duration-150">
+                  +63 951 530 5128
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-sm">
+                <Phone size={15} className="mt-0.5 text-gold shrink-0" />
+                <a href="tel:+639518441342" className="hover:text-white transition-colors duration-150">
+                  +63 951 844 1342
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <MapPin size={15} className="mt-0.5 text-gold shrink-0" />
-                <span>Professional Business Services</span>
+                <span>Davao City, Philippines</span>
               </li>
             </ul>
             <div className="mt-6">

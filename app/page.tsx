@@ -138,14 +138,16 @@ export default function HomePage() {
       {/* Hero — full-bleed with overlay */}
       <section data-hero-section className="relative min-h-screen flex items-center overflow-hidden">
         <ParallaxHero />
-        {/* Background image */}
-        <Image
-          src="/assets/hero.svg"
-          alt=""
-          fill
-          className="object-cover"
-          priority
-        />
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/assets/hero4.mp4" type="video/mp4" />
+        </video>
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/92 to-primary/60" />
         {/* Subtle grid pattern — targeted by ParallaxHero */}
@@ -156,7 +158,7 @@ export default function HomePage() {
 
         {/* Content — targeted by ParallaxHero */}
         <div data-hero-content className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24 lg:pt-40 lg:pb-32 will-change-transform">
-          <HeroContent className="max-w-3xl">
+          <HeroContent className="mx-auto text-center">
             <HeroItem>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/20 text-gold text-xs font-medium mb-8 uppercase tracking-widest">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
@@ -164,19 +166,19 @@ export default function HomePage() {
               </div>
             </HeroItem>
             <HeroItem>
-              <h1 className="font-display text-4xl lg:text-6xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
+              <h1 className="font-display text-3xl lg:text-5xl xl:text-6xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
                 Elevate Your Business with Expert Support Solutions
               </h1>
             </HeroItem>
             <HeroItem>
-              <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl font-light">
+              <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl mx-auto font-light">
                 Professional administrative and operational support that empowers
                 businesses to focus on growth. From automations to comprehensive
                 business operations, we&apos;re your trusted partner in success.
               </p>
             </HeroItem>
             <HeroItem>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center">
                 <MagneticButton className="inline-flex">
                   <Link
                     href="/contact"

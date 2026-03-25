@@ -25,13 +25,15 @@ export default function ServicesPage() {
     <>
       {/* Hero — full-bleed image */}
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1800&q=80"
-          alt="Execura business support services"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/assets/hero3.mp4" type="video/mp4" />
+        </video>
         {/* Overlays */}
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/88 to-primary/55" />
         <div className="absolute inset-0 bg-linear-to-t from-primary via-transparent to-transparent" />
@@ -286,7 +288,7 @@ export default function ServicesPage() {
           <FadeUp className="text-center mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-wider transition-colors duration-150"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium uppercase tracking-wider transition-colors duration-150"
             >
               Start with a Free Consultation
               <ArrowRight size={15} />
