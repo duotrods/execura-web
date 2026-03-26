@@ -33,9 +33,11 @@ export const metadata: Metadata = {
   keywords:
     "business support services, virtual assistant, administrative support, executive assistance, website design, website maintenance, business operations, professional support solutions",
   icons: {
-    icon: "/assets/Icon.svg",
-    shortcut: "/assets/Icon.svg",
-    apple: "/assets/Icon.svg",
+    icon: [
+      { url: "/assets/Icon.png", type: "image/png", sizes: "any" },
+    ],
+    shortcut: "/assets/Icon.png",
+    apple: "/assets/Icon.png",
   },
 };
 
