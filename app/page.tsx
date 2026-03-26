@@ -147,7 +147,7 @@ export default function HomePage() {
           priority
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/92 to-primary/60" />
+        <div className="absolute inset-0 bg-linear-to-r from-primary/95 via-primary/75 to-primary/40" />
         {/* Subtle grid pattern — targeted by ParallaxHero */}
         <div
           data-hero-grid
@@ -260,7 +260,7 @@ export default function HomePage() {
             <FadeUp delay={0.2}>
               <div className="relative w-full aspect-4/5 overflow-hidden">
                 <Image
-                  src="/assets/aboutus.jpg"
+                  src="/assets/home.webp"
                   alt="Execura team collaborating on business solutions"
                   fill
                   className="object-cover"

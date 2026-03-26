@@ -194,7 +194,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-6">
               <div className="relative w-full aspect-4/3 overflow-hidden">
                 <Image
-                  src="/assets/aboutus.jpg"
+                  src="/assets/aboutus.webp"
                   alt="The Execura team at work"
                   fill
                   className="object-cover"

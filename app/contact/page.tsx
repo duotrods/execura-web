@@ -14,14 +14,20 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "hello@execura.com",
-    href: "mailto:hello@execura.com",
+    value: "execurasupport@gmail.com",
+    href: "mailto:execurasupport@gmail.com",
   },
   {
     icon: Phone,
     label: "Call Us",
-    value: "+1 (234) 567-890",
-    href: "tel:+1234567890",
+    value: "+63 951 530 5128",
+    href: "tel:+639515305128",
+  },
+  {
+    icon: Phone,
+    label: "Call Us",
+    value: "+63 951 844 1342",
+    href: "tel:+639518441342",
   },
   {
     icon: Clock,
@@ -32,7 +38,7 @@ const contactDetails = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Professional Remote Services",
+    value: "Davao City, Philippines",
     href: null,
   },
 ];
