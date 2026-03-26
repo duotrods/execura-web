@@ -1,10 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Renders nothing — targets data-hero-* attributes on the existing hero DOM.
@@ -17,34 +13,40 @@ gsap.registerPlugin(ScrollTrigger);
  */
 export default function ParallaxHero() {
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Grid moves slower than scroll → sense of depth
-      gsap.to("[data-hero-grid]", {
-        yPercent: 20,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "[data-hero-section]",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.2,
-        },
-      });
+    let cleanup: (() => void) | undefined;
 
-      // Text content drifts up and fades as user scrolls past the fold
-      gsap.to("[data-hero-content]", {
-        yPercent: -14,
-        opacity: 0.35,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "[data-hero-section]",
-          start: "45% top",
-          end: "bottom top",
-          scrub: 1,
-        },
+    Promise.all([
+      import("gsap").then((m) => m.gsap),
+      import("gsap/ScrollTrigger").then((m) => m.ScrollTrigger),
+    ]).then(([gsap, ScrollTrigger]) => {
+      gsap.registerPlugin(ScrollTrigger);
+      const ctx = gsap.context(() => {
+        gsap.to("[data-hero-grid]", {
+          yPercent: 20,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "[data-hero-section]",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.2,
+          },
+        });
+        gsap.to("[data-hero-content]", {
+          yPercent: -14,
+          opacity: 0.35,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "[data-hero-section]",
+            start: "45% top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
       });
+      cleanup = () => ctx.revert();
     });
 
-    return () => ctx.revert();
+    return () => cleanup?.();
   }, []);
 
   return null;

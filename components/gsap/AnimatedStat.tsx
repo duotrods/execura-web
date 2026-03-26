@@ -1,9 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
   value: string; // e.g. "500+", "98%", "5+"
@@ -12,7 +8,6 @@ interface Props {
 
 export default function AnimatedStat({ value, label }: Props) {
   const numRef = useRef<HTMLDivElement>(null);
-  const stRef = useRef<ScrollTrigger | null>(null);
 
   useEffect(() => {
     if (!numRef.current) return;
@@ -22,35 +17,41 @@ export default function AnimatedStat({ value, label }: Props) {
     const target = parseInt(match[1], 10);
     const suffix = match[2] ?? "";
     const el = numRef.current;
-    const counter = { val: 0 };
-    let tween: gsap.core.Tween | null = null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let stInstance: any = null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let tween: any = null;
 
-    stRef.current = ScrollTrigger.create({
-      trigger: el,
-      start: "top 88%",
-      onEnter: () => {
-        tween = gsap.to(counter, {
-          val: target,
-          duration: 1.8,
-          ease: "power3.out",
-          onUpdate() {
-            el.textContent = Math.round(counter.val) + suffix;
-          },
-          onComplete() {
-            el.textContent = value;
-          },
-        });
-      },
-      onLeaveBack: () => {
-        tween?.kill();
-        counter.val = 0;
-        el.textContent = "0";
-      },
+    Promise.all([
+      import("gsap").then((m) => m.gsap),
+      import("gsap/ScrollTrigger").then((m) => m.ScrollTrigger),
+    ]).then(([gsap, ScrollTrigger]) => {
+      gsap.registerPlugin(ScrollTrigger);
+      if (!el) return;
+      const counter = { val: 0 };
+      stInstance = ScrollTrigger.create({
+        trigger: el,
+        start: "top 88%",
+        onEnter: () => {
+          tween = gsap.to(counter, {
+            val: target,
+            duration: 1.8,
+            ease: "power3.out",
+            onUpdate() { el.textContent = Math.round(counter.val) + suffix; },
+            onComplete() { el.textContent = value; },
+          });
+        },
+        onLeaveBack: () => {
+          tween?.kill();
+          counter.val = 0;
+          el.textContent = "0";
+        },
+      });
     });
 
     return () => {
       tween?.kill();
-      stRef.current?.kill();
+      stInstance?.kill();
     };
   }, [value]);
 

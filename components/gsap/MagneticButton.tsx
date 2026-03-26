@@ -1,6 +1,6 @@
 "use client";
-import { useRef } from "react";
-import { gsap } from "gsap";
+import { useRef, useEffect } from "react";
+import type { gsap as GsapType } from "gsap";
 
 interface Props {
   children: React.ReactNode;
@@ -9,10 +9,18 @@ interface Props {
 
 export function MagneticButton({ children, className }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const gsapRef = useRef<typeof GsapType | null>(null);
+
+  useEffect(() => {
+    import("gsap").then(({ gsap }) => {
+      gsapRef.current = gsap;
+    });
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const gsap = gsapRef.current;
     const el = ref.current;
-    if (!el) return;
+    if (!gsap || !el) return;
     const rect = el.getBoundingClientRect();
     const x = (e.clientX - (rect.left + rect.width / 2)) * 0.28;
     const y = (e.clientY - (rect.top + rect.height / 2)) * 0.28;
@@ -20,6 +28,8 @@ export function MagneticButton({ children, className }: Props) {
   };
 
   const handleMouseLeave = () => {
+    const gsap = gsapRef.current;
+    if (!gsap) return;
     gsap.to(ref.current, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.5)" });
   };
 
