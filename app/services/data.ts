@@ -1,4 +1,4 @@
-import { Zap, Settings, UserCog, Briefcase, Globe, Headphones, type LucideIcon } from "lucide-react";
+import { Zap, Settings, UserCog, Briefcase, Globe, Target, type LucideIcon } from "lucide-react";
 
 export interface ServiceProcess {
   number: string;
@@ -687,125 +687,125 @@ export const services: Service[] = [
     },
   },
   {
-    slug: "virtual-assistant",
-    icon: Headphones,
-    title: "Virtual Assistant",
-    subtitle: "Your Remote Right Hand",
+    slug: "lead-generation",
+    icon: Target,
+    title: "Lead Generation",
+    subtitle: "Fill Your Pipeline with Quality Prospects",
     shortDescription:
-      "A dedicated virtual assistant to handle your day-to-day tasks — inbox management, research, scheduling, and personal coordination — so you can stay focused on what matters most.",
+      "Targeted lead generation that identifies, qualifies, and delivers ready-to-convert prospects directly to your sales team — so you spend less time prospecting and more time closing.",
     description:
-      "Our virtual assistant service provides reliable, responsive day-to-day task support that keeps your personal and professional life running smoothly.",
+      "Our lead generation service builds a consistent pipeline of qualified prospects tailored to your ideal customer profile, using proven outreach strategies and research-backed targeting.",
     longDescription: [
-      "Every high-performing professional has one thing in common: they've learned to delegate effectively. But finding the right person to trust with your inbox, your calendar, and your day-to-day tasks is harder than it sounds. That's exactly the problem Execura's Virtual Assistant service solves.",
-      "Our virtual assistants are skilled, professional, and genuinely invested in making your life easier. We handle the everyday tasks that eat into your productive hours — from triaging emails and scheduling appointments to conducting research and managing personal errands — with the kind of reliability and discretion you'd expect from a trusted in-house team member.",
-      "Whether you're a founder who needs a capable right hand, a busy professional drowning in admin, or a small team that just needs reliable day-to-day support, our VA service adapts to your life and your workflow — not the other way around.",
+      "Every business needs a steady flow of new clients — but building and managing a lead generation engine takes time, skill, and the right tools. Execura's Lead Generation service takes that burden off your plate entirely.",
+      "We research, identify, and qualify prospects that match your ideal customer profile. Using a combination of outbound outreach, data enrichment, and personalized messaging, we deliver warm, interested leads directly into your pipeline — not just a list of names.",
+      "Whether you're a startup looking to build your first client base or an established business scaling into new markets, our lead generation service gives you a reliable, repeatable system for growth — without the overhead of an in-house sales development team.",
     ],
     features: [
-      "Email inbox management and triage",
-      "Calendar coordination and appointment scheduling",
-      "Online research and data gathering",
-      "Customer enquiry management and follow-ups",
-      "Social media monitoring and basic scheduling",
-      "Data entry and database management",
-      "Travel research and booking coordination",
-      "Personal errands and online task management",
+      "Ideal Customer Profile (ICP) development",
+      "Prospect research and contact list building",
+      "Email outreach and follow-up sequences",
+      "LinkedIn prospecting and connection campaigns",
+      "Lead qualification and scoring",
+      "CRM data entry and pipeline management",
+      "Weekly lead reports and performance tracking",
+      "Market research and competitor analysis",
     ],
     benefits: [
-      "Reclaim hours every day for high-priority work",
-      "Consistent inbox zero and an organized calendar",
-      "Quick turnaround on research and information tasks",
-      "A reliable extension of your personal and professional life",
+      "Consistent flow of qualified, sales-ready leads",
+      "Reduced time spent on manual prospecting",
+      "Higher conversion rates through better targeting",
+      "Scalable outreach without growing your headcount",
     ],
     idealFor:
-      "Entrepreneurs, solopreneurs, small business owners, creatives, and busy professionals who need reliable day-to-day task support without the complexity of a full administrative team.",
+      "Startups, SMEs, coaches, consultants, and service-based businesses that need a reliable pipeline of qualified prospects without the cost of a full in-house sales team.",
     process: [
       {
         number: "01",
-        title: "Onboarding Call",
+        title: "ICP & Strategy Session",
         description:
-          "We get to know your preferences, routines, tools, and priorities. The more we understand how you work, the more seamlessly we can support you from day one.",
+          "We work with you to define your ideal customer profile — industry, company size, decision-maker roles, pain points, and buying triggers — to ensure every lead we deliver is genuinely relevant.",
       },
       {
         number: "02",
-        title: "Access & Setup",
+        title: "Research & List Building",
         description:
-          "We establish secure access to your email, calendar, and other tools. We create a clear task management system so nothing falls through the cracks.",
+          "Our team manually researches and builds targeted prospect lists using LinkedIn, industry databases, and verified contact sources. Every lead is checked for accuracy before outreach begins.",
       },
       {
         number: "03",
-        title: "Task Intake & Prioritization",
+        title: "Outreach & Engagement",
         description:
-          "You send tasks as they arise — by email, message, or voice note. We organize and prioritize them based on urgency and your preferences.",
+          "We launch personalized outreach campaigns via email and LinkedIn, with thoughtful follow-up sequences designed to start real conversations — not just generate opens.",
       },
       {
         number: "04",
-        title: "Execution & Updates",
+        title: "Qualification & Handoff",
         description:
-          "We handle tasks efficiently and keep you informed with clear, timely updates. You stay in control without being in the weeds.",
+          "Interested responses are qualified against your criteria and handed off to your sales team ready for a call or demo — with full context on the prospect included.",
       },
       {
         number: "05",
-        title: "Ongoing Refinement",
+        title: "Reporting & Optimization",
         description:
-          "The longer we work together, the more we anticipate your needs. We continuously refine our approach so your support gets smarter over time.",
+          "We provide weekly performance reports covering outreach volumes, response rates, and qualified leads. We continuously test and refine messaging to improve results over time.",
       },
     ],
     whyUs: [
       {
-        title: "Genuinely Personal Support",
+        title: "Quality Over Quantity",
         description:
-          "Unlike generic task services, we take the time to understand your working style, preferences, and priorities — delivering support that feels like it comes from someone who genuinely knows you.",
+          "We don't sell bulk lead lists. Every prospect is researched, verified, and matched to your ICP before outreach begins — so your team only speaks to people who are genuinely worth their time.",
       },
       {
-        title: "Reliable & Responsive",
+        title: "Personalized, Not Spammy",
         description:
-          "Your tasks are handled promptly and professionally. We set clear turnaround expectations and always keep you informed — no chasing, no follow-ups required from your end.",
+          "Our outreach is written to start genuine conversations, not flood inboxes. We craft messaging that reflects your brand voice and resonates with your target audience.",
       },
       {
-        title: "Privacy You Can Trust",
+        title: "Transparent Reporting",
         description:
-          "We handle your personal and professional information with complete confidentiality. Every team member operates under strict privacy protocols and signed agreements.",
+          "You see exactly what's working. Weekly reports give you full visibility into outreach activity, response rates, and pipeline contribution — with actionable insights, not vanity metrics.",
       },
     ],
     faqs: [
       {
-        question: "What's the difference between a virtual assistant and administrative support?",
+        question: "How long before I start seeing leads?",
         answer:
-          "A virtual assistant handles a broader mix of personal and professional tasks on a day-to-day basis — inbox management, research, bookings, and personal errands. Administrative support is more focused on structured business functions like document creation, presentations, and formal business correspondence. Many clients use both services together.",
+          "Most clients begin seeing initial responses within the first 2–3 weeks of outreach. A consistent flow of qualified leads typically builds over the first 30–60 days as campaigns are tested and optimized.",
       },
       {
-        question: "What tools do you work with?",
+        question: "Do you guarantee a certain number of leads?",
         answer:
-          "We're comfortable across most major platforms including Gmail, Outlook, Google Workspace, Microsoft 365, Notion, Trello, Asana, Slack, and more. We adapt to your existing toolkit — you won't need to change how you work.",
+          "We don't guarantee specific lead volumes, as results depend on your market, offer, and target audience. What we do guarantee is a professional, data-driven approach with full transparency — and continuous optimization to improve results over time.",
       },
       {
-        question: "Can you manage my social media?",
+        question: "What outreach channels do you use?",
         answer:
-          "We can handle social media monitoring, scheduling, and basic posting across your platforms. For strategic social media management or original content creation, we'd recommend discussing your specific needs during a consultation to find the right fit.",
+          "We primarily use personalized email outreach and LinkedIn prospecting. Depending on your target market, we may also recommend additional channels. We always align outreach channels to where your ideal customers are most active.",
       },
       {
-        question: "How quickly can you turn around tasks?",
+        question: "Can you integrate with my existing CRM?",
         answer:
-          "Most routine tasks are completed within the same business day. For research-heavy or time-sensitive tasks, we'll always confirm a realistic turnaround upfront — no surprises.",
+          "Yes. We work with most major CRMs including HubSpot, Salesforce, Pipedrive, and Notion. Qualified leads are entered directly into your pipeline with all relevant contact information and outreach history included.",
       },
     ],
     relatedSlugs: ["admin-support", "executive-assistance", "automation"],
     heroImage:
-      "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80",
     overviewImage:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
     stats: [
-      { value: "8+", label: "Hours Saved Per Day" },
-      { value: "48h", label: "Average Setup Time" },
-      { value: "100%", label: "Secure & Confidential" },
-      { value: "5★", label: "Client Satisfaction" },
+      { value: "3x", label: "More Qualified Leads" },
+      { value: "60%", label: "Less Time Prospecting" },
+      { value: "2–3 wks", label: "To First Responses" },
+      { value: "100%", label: "ICP-Matched Prospects" },
     ],
     seo: {
-      title: "Virtual Assistant Services for Entrepreneurs & Professionals | Execura",
+      title: "Lead Generation Services for B2B Businesses | Execura",
       description:
-        "Professional virtual assistant services for busy professionals and entrepreneurs. Inbox management, scheduling, research, and day-to-day task support — so you can focus on what matters most.",
+        "Professional lead generation services that identify, qualify, and deliver sales-ready prospects to your pipeline. Targeted outreach, LinkedIn prospecting, and CRM integration for consistent business growth.",
       keywords:
-        "virtual assistant services, remote virtual assistant, inbox management, calendar management, personal assistant, VA services, online assistant, task management, professional virtual assistant",
+        "lead generation services, B2B lead generation, prospect research, outbound outreach, LinkedIn prospecting, sales pipeline, qualified leads, email outreach, lead qualification, business development",
     },
   },
 ];

@@ -8,7 +8,7 @@ const serviceslugs = [
   "executive-assistance",
   "operations",
   "website",
-  "virtual-assistant",
+  "lead-generation",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

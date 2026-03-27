@@ -15,6 +15,7 @@ const footerLinks = {
     { href: "/services#executive-assistance", label: "Executive Assistance" },
     { href: "/services#operations", label: "Business Operations" },
     { href: "/services#website", label: "Website Services" },
+    { href: "/services/lead-generation", label: "Lead Generation" },
   ],
 };
 

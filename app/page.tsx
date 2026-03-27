@@ -12,7 +12,7 @@ import {
   TrendingUp,
   Clock,
   Star,
-  Headphones,
+  Target,
 } from "lucide-react";
 import {
   HeroContent,
@@ -69,12 +69,12 @@ const services = [
       "Professional website design and development services that establish your online presence — from custom builds to ongoing maintenance and SEO optimisation.",
   },
   {
-    slug: "virtual-assistant",
-    icon: Headphones,
-    title: "Virtual Assistant",
-    subtitle: "Your Remote Right Hand",
+    slug: "lead-generation",
+    icon: Target,
+    title: "Lead Generation",
+    subtitle: "Fill Your Pipeline with Quality Prospects",
     description:
-      "A dedicated virtual assistant to handle your day-to-day tasks — inbox management, research, scheduling, and personal coordination — so you can focus on what matters.",
+      "Targeted lead generation that identifies, qualifies, and delivers ready-to-convert prospects directly to your sales team — so you spend less time prospecting and more time closing.",
   },
 ];
 

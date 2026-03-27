@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Zap, Settings, UserCog, Briefcase, Globe, Headphones } from "lucide-react";
+import { Menu, X, ChevronDown, Zap, Settings, UserCog, Briefcase, Globe, Target } from "lucide-react";
 
 const serviceItems = [
   { href: "/services/automation", label: "Automations", icon: Zap },
@@ -11,7 +11,7 @@ const serviceItems = [
   { href: "/services/executive-assistance", label: "Executive Assistance", icon: UserCog },
   { href: "/services/operations", label: "Business Operations", icon: Briefcase },
   { href: "/services/website", label: "Website Services", icon: Globe },
-  { href: "/services/virtual-assistant", label: "Virtual Assistant", icon: Headphones },
+  { href: "/services/lead-generation", label: "Lead Generation", icon: Target },
 ];
 
 export default function Navbar() {
