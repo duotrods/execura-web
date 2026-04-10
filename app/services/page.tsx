@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Business Support Services – Automations, Admin, Executive & Web | Execura",
   description:
     "Comprehensive business support services including workflow automations, administrative support, executive assistance, operations management, and website creation. Tailored to your business needs.",
+  alternates: {
+    canonical: "https://www.execurasupport.com/services",
+  },
 };
 
 export default function ServicesPage() {

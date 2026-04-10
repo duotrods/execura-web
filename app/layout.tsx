@@ -26,11 +26,15 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.execurasupport.com"),
   title: "Execura Support Solutions - Business Support, Virtual Assistant & Website Services",
   description:
     "Expert business support solutions including virtual assistance, administrative services, website creation & maintenance, and operational support. Streamline your business operations with Execura's professional team.",
   keywords:
     "business support services, virtual assistant, administrative support, executive assistance, website design, website maintenance, business operations, professional support solutions",
+  alternates: {
+    canonical: "https://www.execurasupport.com",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

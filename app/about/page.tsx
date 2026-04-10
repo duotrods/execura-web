@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "Learn about Execura Support Solutions' commitment to business excellence. Discover our mission, values, and the experienced team dedicated to your success.",
   keywords:
     "about execura, business support team, virtual assistant company, professional support solutions, executive assistance team, business operations support",
+  alternates: {
+    canonical: "https://www.execurasupport.com/about",
+  },
 };
 
 const values = [

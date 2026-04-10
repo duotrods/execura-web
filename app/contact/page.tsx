@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Contact Execura Support Solutions - Schedule Your Free Consultation",
   description:
     "Get in touch with Execura Support Solutions. Schedule a free consultation to discuss how our business support services can help streamline your operations.",
+  alternates: {
+    canonical: "https://www.execurasupport.com/contact",
+  },
 };
 
 const contactDetails = [

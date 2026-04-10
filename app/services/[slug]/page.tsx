@@ -33,6 +33,9 @@ export async function generateMetadata({
     title: service.seo.title,
     description: service.seo.description,
     keywords: service.seo.keywords,
+    alternates: {
+      canonical: `https://www.execurasupport.com/services/${slug}`,
+    },
   };
 }
 
