@@ -16,7 +16,7 @@ export default function ContactForm() {
   return (
     <div
       className="calendly-inline-widget"
-      data-url="https://calendly.com/duotrodolinor/1-on-1-feedback-session"
+      data-url="https://calendly.com/execurasupportph/30min"
       style={{ minWidth: "320px", height: "700px" }}
     />
   );

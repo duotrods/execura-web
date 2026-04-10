@@ -51,18 +51,6 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-size-[64px_64px]" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-32 pb-14 lg:pb-20">
-          {/* <ClipReveal className="max-w-2xl">
-            <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-4">
-              Contact Us
-            </p>
-            <h1 className="font-display text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
-              Let&apos;s Start a Conversation
-            </h1>
-            <p className="text-white/70 text-lg leading-relaxed font-light">
-              Schedule your free consultation and discover how Execura Support
-              Solutions can transform your business operations.
-            </p>
-          </ClipReveal> */}
           <HeroContent className="max-w-3xl">
             <HeroItem>
               <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-4">
@@ -87,9 +75,27 @@ export default function ContactPage() {
       {/* Main — split panel */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5">
-            {/* Left: light info panel */}
-            <div className="lg:col-span-2 bg-white relative overflow-hidden py-16 lg:py-20 pr-0 lg:pr-12">
+          <div className="flex flex-col lg:grid lg:grid-cols-5">
+
+            {/* Calendly — top on mobile, right on desktop */}
+            <div className="order-1 lg:order-2 lg:col-span-3 bg-white py-16 lg:py-20 lg:pl-14 px-0 lg:px-0 border-b lg:border-b-0 lg:border-l border-brand-text/8">
+              <FadeUp>
+                <p className="text-secondary text-xs font-light uppercase tracking-[6px] mb-2">
+                  Free Consultation
+                </p>
+                <h2 className="font-display text-2xl lg:text-3xl font-medium text-brand-text mb-2 uppercase tracking-widest">
+                  Schedule Your Call
+                </h2>
+                <p className="text-brand-text/45 text-sm font-light mb-10">
+                  Fill out the form below and we&apos;ll be in touch within one
+                  business day.
+                </p>
+              </FadeUp>
+              <ContactForm />
+            </div>
+
+            {/* Left info panel — below on mobile, left on desktop */}
+            <div className="order-2 lg:order-1 lg:col-span-2 bg-white relative overflow-hidden py-16 lg:py-20 pr-0 lg:pr-12">
               <div className="relative z-10">
                 {/* Header */}
                 <FadeUp>
@@ -180,22 +186,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: form panel */}
-            <div className="lg:col-span-3 bg-white py-16 lg:py-20 lg:pl-14 px-6 lg:px-0 border-l border-brand-text/8">
-              <FadeUp>
-                <p className="text-secondary text-xs font-light uppercase tracking-[6px] mb-2">
-                  Free Consultation
-                </p>
-                <h2 className="font-display text-2xl lg:text-3xl font-medium text-brand-text mb-2 uppercase tracking-widest">
-                  Schedule Your Call
-                </h2>
-                <p className="text-brand-text/45 text-sm font-light mb-10">
-                  Fill out the form below and we&apos;ll be in touch within one
-                  business day.
-                </p>
-              </FadeUp>
-              <ContactForm />
-            </div>
           </div>
         </div>
       </section>
