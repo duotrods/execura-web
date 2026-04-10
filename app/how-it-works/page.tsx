@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, MessageSquare, FileText, Rocket, BarChart2, RefreshCw } from "lucide-react";
+import { ArrowRight, MessageSquare, FileText, Rocket, BarChart2, RefreshCw, CalendarDays } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How It Works - Execura Support Solutions Process | Getting Started Guide",
@@ -249,8 +249,8 @@ export default function HowItWorksPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-amber-600 font-semibold rounded hover:bg-stone-100 transition-colors duration-150"
             >
-              Schedule Free Consultation
-              <ArrowRight size={16} />
+              <CalendarDays size={16} />
+              Book Your Game Plan Call
             </Link>
             <Link
               href="/pricing"

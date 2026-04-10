@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, Clock, Settings, UserCog, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Check, Clock, Settings, UserCog, CheckCircle2, CalendarDays } from "lucide-react";
 import { ClipReveal } from "@/components/gsap/ClipReveal";
 import {
   HeroContent,
@@ -155,8 +155,8 @@ export default function ServicesPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 px-7 py-4 bg-secondary hover:bg-secondary/90 text-white uppercase tracking-wider transition-colors duration-150"
                 >
-                  Discuss Custom Solutions
-                  <ArrowRight size={15} />
+                  <CalendarDays size={15} />
+                  Book Your Game Plan Call
                 </Link>
                 
               </div>
@@ -278,8 +278,8 @@ export default function ServicesPage() {
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium uppercase tracking-wider transition-colors duration-150"
             >
-              Start with a Free Consultation
-              <ArrowRight size={15} />
+              <CalendarDays size={15} />
+              Book Your Game Plan Call
             </Link>
           </FadeUp>
         </div>
@@ -304,8 +304,8 @@ export default function ServicesPage() {
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-semibold uppercase tracking-wider hover:bg-brand-bg transition-colors duration-150"
             >
-              Get Your Free Consultation
-              <ArrowRight size={16} />
+              <CalendarDays size={16} />
+              Book Your Game Plan Call
             </Link>
           </FadeUp>
         </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram, CalendarDays } from "lucide-react";
 
 const footerLinks = {
   company: [
@@ -128,9 +128,10 @@ export default function Footer() {
             <div className="mt-6">
               <Link
                 href="/contact"
-                className="inline-block px-5 py-2.5 bg-secondary hover:bg-secondary/90 text-white text-sm font-medium uppercase tracking-wider transition-colors duration-150"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-secondary hover:bg-secondary/90 text-white text-sm font-medium uppercase tracking-wider transition-colors duration-150"
               >
-                Free Consultation
+                <CalendarDays size={14} />
+                Book Your Game Plan Call
               </Link>
             </div>
           </div>

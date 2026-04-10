@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Zap, Settings, UserCog, Briefcase, Globe, Target } from "lucide-react";
+import { Menu, X, ChevronDown, Zap, Settings, UserCog, Briefcase, Globe, Target, CalendarDays } from "lucide-react";
 
 const serviceItems = [
   { href: "/services/automation", label: "Automations", icon: Zap },

@@ -63,24 +63,22 @@ export default function ContactPage() {
               Solutions can transform your business operations.
             </p>
           </ClipReveal> */}
-           <HeroContent className="max-w-3xl">
-                                
-                                <HeroItem>
-                                  <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-4">
-                                     Contact Us
-                                  </p>
-                                  <h1 className="font-display text-4xl lg:text-6xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
-                                     Let&apos;s Start a Conversation
-                                  </h1>
-                                </HeroItem>
-                                <HeroItem>
-                                  <p className="text-white/70 text-lg leading-relaxed mb-10 font-light">
-                                   Schedule your free consultation and discover how Execura Support
-              Solutions can transform your business operations.
-                                  </p>
-                                </HeroItem>
-                                
-                              </HeroContent>
+          <HeroContent className="max-w-3xl">
+            <HeroItem>
+              <p className="text-gold text-sm font-light uppercase tracking-[6px] mb-4">
+                Contact Us
+              </p>
+              <h1 className="font-display text-4xl lg:text-6xl font-semibold text-white leading-tight tracking-widest mb-6 uppercase">
+                Let&apos;s Start a Conversation
+              </h1>
+            </HeroItem>
+            <HeroItem>
+              <p className="text-white/70 text-lg leading-relaxed mb-10 font-light">
+                Schedule your free consultation and discover how Execura Support
+                Solutions can transform your business operations.
+              </p>
+            </HeroItem>
+          </HeroContent>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-primary to-transparent" />
@@ -90,10 +88,8 @@ export default function ContactPage() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-5">
-
             {/* Left: light info panel */}
             <div className="lg:col-span-2 bg-white relative overflow-hidden py-16 lg:py-20 pr-0 lg:pr-12">
-
               <div className="relative z-10">
                 {/* Header */}
                 <FadeUp>
@@ -102,11 +98,15 @@ export default function ContactPage() {
                       Get in Touch
                     </p>
                     <h2 className="font-display text-3xl lg:text-4xl font-semibold text-brand-text leading-tight uppercase tracking-widest mb-5">
-                      Start the<br />
+                      Start the
+                      <br />
                       <span className="text-primary">Conversation</span>
                     </h2>
                   </ClipReveal>
-                  <RevealLine className="w-12 h-px bg-brand-text/25 mb-6" delay={0.15} />
+                  <RevealLine
+                    className="w-12 h-px bg-brand-text/25 mb-6"
+                    delay={0.15}
+                  />
                   <p className="text-brand-text/65 text-sm leading-relaxed font-light">
                     Whether you&apos;re ready to delegate or simply exploring
                     your options — we&apos;re here with zero pressure and no
@@ -123,7 +123,10 @@ export default function ContactPage() {
                         className="group flex items-center gap-4 border-b border-brand-text/12 py-4 hover:bg-brand-text/4 px-3 -mx-3 transition-colors duration-200 cursor-default"
                       >
                         <div className="w-8 h-8 border border-brand-text/18 group-hover:border-secondary/50 flex items-center justify-center shrink-0 transition-colors duration-200">
-                          <item.icon size={13} className="text-brand-text/45 group-hover:text-secondary transition-colors duration-200" />
+                          <item.icon
+                            size={13}
+                            className="text-brand-text/45 group-hover:text-secondary transition-colors duration-200"
+                          />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-brand-text/45 text-[9px] uppercase tracking-[4px] font-medium mb-0.5">
@@ -160,7 +163,10 @@ export default function ContactPage() {
                       { step: "04", text: "Onboarding within 3–5 days" },
                       { step: "05", text: "30-day satisfaction guarantee" },
                     ].map((item, i) => (
-                      <div key={i} className="group flex items-baseline gap-3 py-2.5 border-b border-brand-text/8 last:border-0">
+                      <div
+                        key={i}
+                        className="group flex items-baseline gap-3 py-2.5 border-b border-brand-text/8 last:border-0"
+                      >
                         <span className="text-secondary/60 text-[9px] font-medium tabular-nums shrink-0 group-hover:text-secondary transition-colors duration-200">
                           {item.step}
                         </span>
@@ -184,12 +190,12 @@ export default function ContactPage() {
                   Schedule Your Call
                 </h2>
                 <p className="text-brand-text/45 text-sm font-light mb-10">
-                  Fill out the form below and we&apos;ll be in touch within one business day.
+                  Fill out the form below and we&apos;ll be in touch within one
+                  business day.
                 </p>
               </FadeUp>
               <ContactForm />
             </div>
-
           </div>
         </div>
       </section>

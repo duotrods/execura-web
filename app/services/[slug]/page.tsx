@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, ArrowLeft, Clock, Settings, UserCog, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Check, ArrowLeft, Clock, Settings, UserCog, CheckCircle2, CalendarDays } from "lucide-react";
 import { ClipReveal } from "@/components/gsap/ClipReveal";
 import AnimatedStat from "@/components/gsap/AnimatedStat";
 import ParallaxHero from "@/components/gsap/ParallaxHero";
@@ -106,8 +106,8 @@ export default async function ServiceDetailPage({
                   href="/contact"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-wider transition-colors duration-150"
                 >
-                  Get Started
-                  <ArrowRight size={15} />
+                  <CalendarDays size={15} />
+                  Book Your Game Plan Call
                 </Link>
                 <a
                   href="#overview"
@@ -149,8 +149,8 @@ export default async function ServiceDetailPage({
                 href="/contact"
                 className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 font-medium text-sm uppercase tracking-wider transition-colors duration-150"
               >
-                Book a Free Consultation
-                <ArrowRight size={15} />
+                <CalendarDays size={15} />
+                Book Your Game Plan Call
               </Link>
             </FadeUp>
 
@@ -199,8 +199,8 @@ export default async function ServiceDetailPage({
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white uppercase tracking-wider text-sm transition-colors duration-150 shrink-0"
               >
-                Get Started
-                <ArrowRight size={14} />
+                <CalendarDays size={14} />
+                Book Your Game Plan Call
               </Link>
             </div>
             <div className="w-full h-px bg-white/10 mt-8 mb-0" />
@@ -283,8 +283,8 @@ export default async function ServiceDetailPage({
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-brand-text/20 hover:border-secondary hover:text-secondary text-brand-text text-sm font-medium uppercase tracking-wider transition-colors duration-200"
               >
-                Talk to Our Team
-                <ArrowRight size={14} />
+                <CalendarDays size={14} />
+                Book Your Game Plan Call
               </Link>
             </FadeUp>
 
@@ -384,8 +384,8 @@ export default async function ServiceDetailPage({
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-wider transition-colors duration-150"
             >
-              Start with a Free Consultation
-              <ArrowRight size={15} />
+              <CalendarDays size={15} />
+              Book Your Game Plan Call
             </Link>
           </FadeUp>
         </div>
@@ -417,8 +417,8 @@ export default async function ServiceDetailPage({
                   href="/contact"
                   className="inline-flex items-center gap-2 px-5 py-3 bg-secondary hover:bg-secondary/90 text-white text-sm font-medium uppercase tracking-wider transition-colors duration-150"
                 >
-                  Ask Us Anything
-                  <ArrowRight size={14} />
+                  <CalendarDays size={14} />
+                  Book Your Game Plan Call
                 </Link>
               </div>
             </div>
@@ -553,8 +553,8 @@ export default async function ServiceDetailPage({
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-secondary hover:bg-secondary/90 text-white font-semibold uppercase tracking-wider transition-colors duration-150"
               >
-                Book Your Free Consultation
-                <ArrowRight size={16} />
+                <CalendarDays size={16} />
+                Book Your Game Plan Call
               </Link>
               <Link
                 href="/services"

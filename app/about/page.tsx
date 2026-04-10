@@ -13,6 +13,7 @@ import {
   UserCog,
   CheckCircle2,
   Heart,
+  CalendarDays,
 } from "lucide-react";
 import { ClipReveal } from "@/components/gsap/ClipReveal";
 import {
@@ -356,8 +357,8 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
               >
-                Book a Free Consultation
-                <ArrowRight size={14} />
+                <CalendarDays size={14} />
+                Book Your Game Plan Call
               </Link>
               <Link
                 href="/services"
@@ -418,8 +419,8 @@ export default function AboutPage() {
               href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-[3px] text-sm transition-colors duration-200"
             >
-              Start with a Free Consultation
-              <ArrowRight size={14} />
+              <CalendarDays size={14} />
+              Book Your Game Plan Call
             </Link>
           </FadeUp>
         </div>

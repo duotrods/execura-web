@@ -13,6 +13,7 @@ import {
   Clock,
   Star,
   Target,
+  CalendarDays,
 } from "lucide-react";
 import {
   HeroContent,
@@ -182,8 +183,8 @@ export default function HomePage() {
                     href="/contact"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-wider transition-colors duration-150"
                   >
-                    Get Started Today
-                    <ArrowRight size={16} />
+                    <CalendarDays size={16} />
+                    Book Your Game Plan Call
                   </Link>
                 </MagneticButton>
                 <MagneticButton className="inline-flex">
@@ -351,8 +352,8 @@ export default function HomePage() {
               href="/contact"
               className="inline-flex items-center gap-3 px-7 py-3.5 bg-secondary hover:bg-secondary/90 text-white text-sm font-medium uppercase tracking-[3px] transition-colors duration-200"
             >
-              Book a Free Consultation
-              <ArrowRight size={14} />
+              <CalendarDays size={14} />
+              Book Your Game Plan Call
             </Link>
           </FadeUp>
 
@@ -432,8 +433,8 @@ export default function HomePage() {
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium uppercase tracking-wider transition-colors duration-150"
             >
-              Start with a Free Consultation
-              <ArrowRight size={15} />
+              <CalendarDays size={15} />
+              Book Your Game Plan Call
             </Link>
           </FadeUp>
         </div>
@@ -580,8 +581,8 @@ export default function HomePage() {
             href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-semibold uppercase tracking-wider hover:bg-brand-bg transition-colors duration-150"
           >
-            Schedule a Free Consultation
-            <ArrowRight size={16} />
+            <CalendarDays size={16} />
+            Book Your Game Plan Call
           </Link>
         </FadeUp>
       </section>
